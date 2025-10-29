@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EIME™ | Emotionally Intelligent Marketing Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .trust-wave {
+            animation: wave 3s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .emotional-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">🧠</span>
+                    </div>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">EIME™</span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-gray-900" onclick="switchView('eime')">EIME Platform</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900" onclick="switchView('botlace')">BOTLACE</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Documentation</a>
+                    <button class="gradient-bg text-white px-4 py-2 rounded-lg font-medium hover:opacity-90">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div id="eime-view">
+        <!-- Hero Section -->
+        <section class="gradient-bg text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-5xl font-bold mb-6">Emotional Intelligence Beats Algorithms</h1>
+                    <p class="text-xl mb-8 text-purple-100">The first AI that understands emotion, built to translate digital behaviors into emotional insights</p>
+                    <div class="flex justify-center space-x-4">
+                        <button class="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition">
+                            Start Free Trial
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition">
+                            Watch Demo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Paradox Model -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">The Trust Paradox Model</h2>
+                    <p class="text-xl text-gray-600">Bridging the gap between AI capability and human acceptance</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
+                        <div class="text-4xl mb-4">1️⃣</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Awareness</h3>
+                        <div class="space-y-2 text-sm">
+                            <p class="text-gray-700"><strong>Emotion:</strong> Skeptical</p>
+                            <p class="text-gray-700"><strong>Action:</strong> Validate feelings about AI</p>
+                            <p class="text-gray-700"><strong>Tech:</strong> Sentiment analysis</p>
+                            <p class="text-blue-600 font-semibold">→ Curiosity</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-200">
+                        <div class="text-4xl mb-4">2️⃣</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Engagement</h3>
+                        <div class="space-y-2 text-sm">
+                            <p class="text-gray-700"><strong>Emotion:</strong> Confused</p>
+                            <p class="text-gray-700"><strong>Action:</strong> Explain simply & transparently</p>
+                            <p class="text-gray-700"><strong>Tech:</strong> Natural-language explainability</p>
+                            <p class="text-green-600 font-semibold">→ Comfort</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200">
+                        <div class="text-4xl mb-4">3️⃣</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Empowerment</h3>
+                        <div class="space-y-2 text-sm">
+                            <p class="text-gray-700"><strong>Emotion:</strong> Cautious</p>
+                            <p class="text-gray-700"><strong>Action:</strong> Provide control & customization</p>
+                            <p class="text-gray-700"><strong>Tech:</strong> Adaptive UX + opt-outs</p>
+                            <p class="text-purple-600 font-semibold">→ Confidence</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl border border-pink-200">
+                        <div class="text-4xl mb-4">4️⃣</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Relationship</h3>
+                        <div class="space-y-2 text-sm">
+                            <p class="text-gray-700"><strong>Emotion:</strong> Trusting</p>
+                            <p class="text-gray-700"><strong>Action:</strong> Collaborate with user</p>
+                            <p class="text-gray-700"><strong>Tech:</strong> Co-creation & predictive empathy</p>
+                            <p class="text-pink-600 font-semibold">→ Loyalty</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Trust Dashboard -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Real-Time Trust Dashboard</h2>
+                    <p class="text-xl text-gray-600">Monitor emotional intelligence metrics in real-time</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Emotional Trust Index -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900">Emotional Trust Index</h3>
+                            <span class="text-3xl">🩵</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-5xl font-bold text-blue-600 mb-2" id="trust-score">78</div>
+                            <div class="text-sm text-gray-500">Out of 100</div>
+                            <div class="mt-4">
+                                <div class="w-full bg-gray-200 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full trust-wave" style="width: 78%"></div>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-sm text-green-600 font-medium">↑ 12% from last week</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Transparency Effectiveness -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900">Transparency Effectiveness</h3>
+                            <span class="text-3xl">🧩</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-5xl font-bold text-purple-600 mb-2">85%</div>
+                            <div class="text-sm text-gray-500">User Clarity Score</div>
+                            <div class="mt-4">
+                                <div class="w-full bg-gray-200 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-purple-400 to-purple-600 h-3 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-sm text-green-600 font-medium">↑ 8% from last week</p>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Acceptance Over Time -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900">AI Acceptance</h3>
+                            <span class="text-3xl">🔁</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-5xl font-bold text-green-600 mb-2">92%</div>
+                            <div class="text-sm text-gray-500">Adoption Rate</div>
+                            <div class="mt-4">
+                                <div class="w-full bg-gray-200 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-sm text-green-600 font-medium">↑ 15% from last week</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Emotion Detection Chart -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Emotional Sentiment Analysis</h3>
+                    <canvas id="emotionChart" height="80"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Therapist Framework -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">The Therapist Framework</h2>
+                    <p class="text-xl text-gray-600">Operationalizing empathy in marketing technology</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-8 rounded-xl border border-indigo-200">
+                        <div class="text-3xl mb-4">👂</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">1. Active Listening → Data Listening</h3>
+                        <p class="text-gray-700 mb-4">Detect emotional signals hidden in feedback, reviews, and tone.</p>
+                        <div class="bg-white p-4 rounded-lg border border-indigo-300">
+                            <p class="text-sm font-semibold text-indigo-900">SaaS Feature:</p>
+                            <p class="text-sm text-gray-700">Emotion-AI NLP engine that flags anxiety, distrust, curiosity in customer language.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-8 rounded-xl border border-pink-200">
+                        <div class="text-3xl mb-4">✅</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">2. Validation Before Solution</h3>
+                        <p class="text-gray-700 mb-4">Craft empathetic, transparent messaging that acknowledges fears.</p>
+                        <div class="bg-white p-4 rounded-lg border border-pink-300">
+                            <p class="text-sm font-semibold text-pink-900">SaaS Feature:</p>
+                            <p class="text-sm text-gray-700">AI copy coach that suggests validation statements before value props.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl border border-green-200">
+                        <div class="text-3xl mb-4">🛡️</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">3. Psychological Safety</h3>
+                        <p class="text-gray-700 mb-4">Build user confidence through progressive disclosure & transparent AI.</p>
+                        <div class="bg-white p-4 rounded-lg border border-green-300">
+                            <p class="text-sm font-semibold text-green-900">SaaS Feature:</p>
+                            <p class="text-sm text-gray-700">"Explain My Recommendation" widget + Trust Score visual.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-8 rounded-xl border border-yellow-200">
+                        <div class="text-3xl mb-4">🎯</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">4. Meeting Users Where They Are</h3>
+                        <p class="text-gray-700 mb-4">Allow flexible adoption levels and clear AI opt-outs.</p>
+                        <div class="bg-white p-4 rounded-lg border border-yellow-300">
+                            <p class="text-sm font-semibold text-yellow-900">SaaS Feature:</p>
+                            <p class="text-sm text-gray-700">Adaptive rollout logic that matches AI intensity to user comfort tier.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust KPIs -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">The New Performance Metrics</h2>
+                    <p class="text-xl text-gray-600">Traditional metrics, emotionally upgraded</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <table class="w-full">
+                        <thead class="gradient-bg text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold">Traditional Metric</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold">Emotional Upgrade</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold">Current Score</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 text-gray-700">Click-Through Rate (CTR)</td>
+                                <td class="px-6 py-4 font-semibold text-purple-600">Emotional Resonance Index (ERI)</td>
+                                <td class="px-6 py-4"><span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">87/100</span></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 text-gray-700">Conversion Rate</td>
+                                <td class="px-6 py-4 font-semibold text-purple-600">Trust Velocity (Δ trust over time)</td>
+                                <td class="px-6 py-4"><span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">+12% MoM</span></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 text-gray-700">Engagement Time</td>
+                                <td class="px-6 py-4 font-semibold text-purple-600">Comfort Duration</td>
+                                <td class="px-6 py-4"><span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">8.5 min avg</span></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 text-gray-700">Retention</td>
+                                <td class="px-6 py-4 font-semibold text-purple-600">Emotional Loyalty Score (ELS)</td>
+                                <td class="px-6 py-4"><span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">92/100</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Choose Your Plan</h2>
+                    <p class="text-xl text-gray-600">Start building trust with your audience today</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="border-2 border-gray-200 rounded-xl p-8 hover:border-purple-500 transition">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
+                        <p class="text-gray-600 mb-6">For small teams testing emotional intelligence</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-gray-900">$499</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span class="text-gray-700">Emotional Data Layer</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span class="text-gray-700">Basic Sentiment Analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span class="text-gray-700">Up to 10,000 interactions/mo</span>
+                            </li>
+                        </ul>
+                        <button class="w-full border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition">
+                            Start Free Trial
+                        </button>
+                    </div>
+                    
+                    <div class="border-2 border-purple-600 rounded-xl p-8 relative gradient-bg text-white">
+                        <div class="absolute top-0 right-0 bg-yellow-400 text-gray-900 px-4 py-1 rounded-bl-lg rounded-tr-lg text-sm font-bold">
+                            POPULAR
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Professional</h3>
+                        <p class="text-purple-100 mb-6">For growing brands scaling empathy</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$1,999</span>
+                            <span class="text-purple-100">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <span class="text-yellow-300 mr-2">✓</span>
+                                <span>Everything in Starter</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-yellow-300 mr-2">✓</span>
+                                <span>AI-EI Translator Engine</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-yellow-300 mr-2">✓</span>
+                                <span>Empathy Engine with real-time adjustments</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-yellow-300 mr-2">✓</span>
+                                <span>Up to 100,000 interactions/mo</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition">
+                            Start Free Trial
+                        </button>
+                    </div>
+                    
+                    <div class="border-2 border-gray-200 rounded-xl p-8 hover:border-purple-500 transition">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
+                        <p class="text-gray-600 mb-6">For organizations leading with empathy</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-gray-900">Custom</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span class="text-gray-700">Everything in Professional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span class="text-gray-700">Full Trust Dashboard</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span class="text-gray-700">White-label options</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span class="text-gray-700">Unlimited interactions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span class="text-gray-700">Dedicated success team</span>
+                            </li>
+                        </ul>
+                        <button class="w-full border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition">
+                            Contact Sales
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- BOTLACE View (Hidden by default) -->
+    <div id="botlace-view" style="display: none;">
+        <!-- Will be implemented in next section -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-4">EIME™</h4>
+                    <p class="text-gray-400">Emotional Intelligence for the AI Age</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Features</a></li>
+                        <li><a href="#" class="hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white">API</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">About</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Privacy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms</a></li>
+                        <li><a href="#" class="hover:text-white">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 EIME™. All rights reserved. Built with emotional intelligence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Emotion Chart
+        const ctx = document.getElementById('emotionChart').getContext('2d');
+        const emotionChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [
+                    {
+                        label: 'Trust',
+                        data: [65, 68, 72, 75, 78, 80, 78],
+                        borderColor: 'rgb(59, 130, 246)',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Comfort',
+                        data: [55, 60, 65, 70, 75, 78, 85],
+                        borderColor: 'rgb(147, 51, 234)',
+                        backgroundColor: 'rgba(147, 51, 234, 0.1)',
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Engagement',
+                        data: [70, 72, 75, 78, 82, 85, 92],
+                        borderColor: 'rgb(34, 197, 94)',
+                        backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                        tension: 0.4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+
+        // Animate trust score
+        let trustScore = 0;
+        const targetScore = 78;
+        const scoreElement = document.getElementById('trust-score');
+        
+        const animateScore = setInterval(() => {
+            if (trustScore < targetScore) {
+                trustScore++;
+                scoreElement.textContent = trustScore;
+            } else {
+                clearInterval(animateScore);
+            }
+        }, 20);
+
+        // View switching function
+        function switchView(view) {
+            const eimeView = document.getElementById('eime-view');
+            const botlaceView = document.getElementById('botlace-view');
+            
+            if (view === 'eime') {
+                eimeView.style.display = 'block';
+                botlaceView.style.display = 'none';
+            } else if (view === 'botlace') {
+                eimeView.style.display = 'none';
+                botlaceView.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

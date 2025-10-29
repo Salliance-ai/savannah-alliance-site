@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOTLACE | AI SaaS Operating System for Healthcare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .medical-gradient {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 50%, #14b8a6 100%);
+        }
+        
+        .pulse-animation {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse-ring {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.05);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .metric-card {
+            transition: all 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 medical-gradient rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">🏥</span>
+                    </div>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent">BOTLACE</span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Platform</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Modules</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Enterprise</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Documentation</a>
+                    <button class="medical-gradient text-white px-4 py-2 rounded-lg font-medium hover:opacity-90">
+                        Request Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="medical-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    🚀 World's First AI SaaS Operating System for Healthcare
+                </div>
+                <h1 class="text-5xl font-bold mb-6">Transform Healthcare Delivery with AI</h1>
+                <p class="text-xl mb-8 text-cyan-100 max-w-3xl mx-auto">
+                    Unifying clinical intelligence, operations, and marketing under one adaptive AI layer. 
+                    Built for scalability, compliance, and continuous learning.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <button class="bg-white text-cyan-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        Schedule Demo
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-cyan-600 transition">
+                        View Case Studies
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-time Dashboard Preview -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Enterprise Intelligence Layer</h2>
+                <p class="text-xl text-gray-600">Real-time insights across your entire healthcare operation</p>
+            </div>
+            
+            <!-- Key Metrics Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="metric-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm font-semibold text-gray-600">PATIENT ENGAGEMENT</span>
+                        <span class="text-2xl">👥</span>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-900 mb-1">2,847</div>
+                    <div class="text-sm text-green-600 font-medium">↑ 23% this month</div>
+                </div>
+                
+                <div class="metric-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm font-semibold text-gray-600">REVENUE CYCLE</span>
+                        <span class="text-2xl">💰</span>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-900 mb-1">$847K</div>
+                    <div class="text-sm text-green-600 font-medium">↑ 15% vs last month</div>
+                </div>
+                
+                <div class="metric-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-500">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm font-semibold text-gray-600">PROVIDER PRODUCTIVITY</span>
+                        <span class="text-2xl">⚡</span>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-900 mb-1">40%</div>
+                    <div class="text-sm text-green-600 font-medium">improvement with AI</div>
+                </div>
+                
+                <div class="metric-card bg-white p-6 rounded-xl shadow-lg border-l-4 border-cyan-500">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm font-semibold text-gray-600">COMPLIANCE SCORE</span>
+                        <span class="text-2xl">🛡️</span>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-900 mb-1">99.8%</div>
+                    <div class="text-sm text-green-600 font-medium">HIPAA certified</div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard View -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl font-semibold text-gray-900">Patient Flow & Clinical Operations</h3>
+                    <div class="flex space-x-2">
+                        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200">Today</button>
+                        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200">Week</button>
+                        <button class="px-4 py-2 bg-cyan-600 text-white rounded-lg text-sm font-medium">Month</button>
+                    </div>
+                </div>
+                <canvas id="operationsChart" height="80"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Modules -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Integrated AI Modules</h2>
+                <p class="text-xl text-gray-600">Everything you need to run modern healthcare operations</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- ClinicalOps AI -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl border-2 border-blue-200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-white text-2xl">🩺</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">ClinicalOps AI</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">Medical-grade AI reasoning engine with real-time clinical support</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">Real-time documentation & ICD coding</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">Auto-generated treatment plans based on FHIR standards</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">Predictive follow-up engine reduces missed appointments</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700"><strong>40% improvement</strong> in clinical productivity</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <span class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold">
+                            HIPAA Compliant • FHIR Native
+                        </span>
+                    </div>
+                </div>
+
+                <!-- GHL-Powered MarketOps CRM -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-xl border-2 border-purple-200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-white text-2xl">📊</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">MarketOps CRM</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">GoHighLevel integrated Operations Command Hub</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">AI-driven lead scoring & outreach automation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">Marketing funnel analytics → patient acquisition tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">Predictive churn + lifetime value (LTV) tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">Workflow AI: Marketing → Scheduling → EHR → Follow-up</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <span class="inline-block bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold">
+                            GoHighLevel Native • Full Automation
+                        </span>
+                    </div>
+                </div>
+
+                <!-- CareNav & Smart Scheduling -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl border-2 border-green-200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-white text-2xl">📅</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">CareNav & Scheduling</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">Intelligent patient routing and appointment optimization</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">Predictive appointment balancing across providers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">AI assistant for front-desk and triage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">Adaptive patient routing based on urgency & specialty</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">Automated reminders & no-show prediction</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- RevenueOps Dashboard -->
+                <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-8 rounded-xl border-2 border-cyan-200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-white text-2xl">💳</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">RevenueOps Dashboard</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">Smart billing, forecasting, and revenue cycle management</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-cyan-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">Smart billing anomaly detection with AI</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">Predictive revenue cycle forecasting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">Integration-ready: QuickBooks, Stripe, Athena</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-600 mr-2 font-bold">✓</span>
+                            <span class="text-gray-700">Real-time cash flow analytics & reporting</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Patient360 Hub -->
+            <div class="mt-8 bg-gradient-to-br from-indigo-50 to-indigo-100 p-8 rounded-xl border-2 border-indigo-200">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mr-4">
+                        <span class="text-white text-2xl">🎯</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Patient360 Hub</h3>
+                </div>
+                <p class="text-gray-700 mb-6">Unified patient profile with behavioral, clinical, and engagement metrics</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-900 mb-2">Clinical History</h4>
+                        <p class="text-sm text-gray-600">Complete medical timeline with AI-generated summaries</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-900 mb-2">Engagement Metrics</h4>
+                        <p class="text-sm text-gray-600">Communication patterns, appointment adherence, portal usage</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-900 mb-2">Predictive Insights</h4>
+                        <p class="text-sm text-gray-600">Risk stratification, churn prediction, care recommendations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Diagram -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">AI SaaS Architecture</h2>
+                <p class="text-xl text-gray-600">Built on microservices for scale, security, and speed</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Layer 1: AI Operating Layer -->
+                    <div class="text-center">
+                        <div class="w-full h-32 medical-gradient rounded-lg flex items-center justify-center mb-4">
+                            <span class="text-white text-4xl">🧠</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">AI Operating Layer (ACRE)</h3>
+                        <p class="text-sm text-gray-600">Medical-grade reasoning engine trained on FHIR standards</p>
+                        <ul class="mt-4 text-xs text-gray-700 space-y-1">
+                            <li>• Adaptive decision intelligence</li>
+                            <li>• Auto-generated clinical summaries</li>
+                            <li>• Continuous learning model</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Layer 2: Data & Integration Mesh -->
+                    <div class="text-center">
+                        <div class="w-full h-32 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center mb-4">
+                            <span class="text-white text-4xl">🔗</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Data & Integration Mesh</h3>
+                        <p class="text-sm text-gray-600">Secure FHIR APIs for Epic, ICANotes, Tebra</p>
+                        <ul class="mt-4 text-xs text-gray-700 space-y-1">
+                            <li>• Federated AI learning</li>
+                            <li>• HIPAA-grade compliance</li>
+                            <li>• Real-time data sync</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Layer 3: SaaS Fabric -->
+                    <div class="text-center">
+                        <div class="w-full h-32 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center mb-4">
+                            <span class="text-white text-4xl">⚡</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">SaaS Fabric</h3>
+                        <p class="text-sm text-gray-600">Multitenant microservice framework</p>
+                        <ul class="mt-4 text-xs text-gray-700 space-y-1">
+                            <li>• Zero-touch provisioning</li>
+                            <li>• Modular architecture</li>
+                            <li>• Auto-scaling infrastructure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Tiers -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Built for Every Practice Size</h2>
+                <p class="text-xl text-gray-600">From startups to multi-site enterprises</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Starter Tier -->
+                <div class="border-2 border-gray-200 rounded-xl p-8 hover:border-cyan-500 transition">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
+                        <p class="text-gray-600 mb-4">Perfect for small practices</p>
+                        <div class="text-5xl font-bold text-gray-900 mb-2">$499</div>
+                        <div class="text-gray-600">/month</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Up to 5 providers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">GHL CRM included</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">ClinicalOps + Scheduling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Basic analytics dashboard</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">HIPAA compliance tools</span>
+                        </li>
+                    </ul>
+                    <button class="w-full border-2 border-cyan-600 text-cyan-600 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-50 transition">
+                        Start Trial
+                    </button>
+                </div>
+
+                <!-- Practice Tier -->
+                <div class="border-2 border-cyan-600 rounded-xl p-8 relative medical-gradient text-white">
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-gray-900 px-4 py-1 rounded-bl-lg rounded-tr-lg text-sm font-bold">
+                        MOST POPULAR
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Practice</h3>
+                        <p class="text-cyan-100 mb-4">Growing healthcare organizations</p>
+                        <div class="text-5xl font-bold mb-2">$1,999</div>
+                        <div class="text-cyan-100">/month</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-yellow-300 mr-2">✓</span>
+                            <span>Up to 25 providers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-300 mr-2">✓</span>
+                            <span>Full GHL MarketOps CRM</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-300 mr-2">✓</span>
+                            <span>AI campaign engine</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-300 mr-2">✓</span>
+                            <span>Predictive patient analytics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-300 mr-2">✓</span>
+                            <span>Patient360 Hub</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-300 mr-2">✓</span>
+                            <span>Advanced reporting suite</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-white text-cyan-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        Start Trial
+                    </button>
+                </div>
+
+                <!-- Enterprise Tier -->
+                <div class="border-2 border-gray-200 rounded-xl p-8 hover:border-cyan-500 transition">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
+                        <p class="text-gray-600 mb-4">Multi-site healthcare systems</p>
+                        <div class="text-5xl font-bold text-gray-900 mb-2">$15K+</div>
+                        <div class="text-gray-600">/month</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Unlimited providers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Epic Integration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Federated AI training</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Multi-site scalability</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Custom compliance suite</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">White-label options</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="text-gray-700">Dedicated success team</span>
+                        </li>
+                    </ul>
+                    <button class="w-full border-2 border-cyan-600 text-cyan-600 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-50 transition">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Differentiators -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why BOTLACE Wins</h2>
+                <p class="text-xl text-gray-600">Key differentiators in the healthcare AI market</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4">🏗️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Built-in GHL CRM Operational AI</h3>
+                    <p class="text-gray-600">Native GoHighLevel integration eliminates data silos and automates the entire patient journey</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4">🔮</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Predictive Compliance</h3>
+                    <p class="text-gray-600">AI audits before violations occur, ensuring continuous HIPAA and regulatory compliance</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4">🌐</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Cross-Institution Learning</h3>
+                    <p class="text-gray-600">Federated AI improves outcomes across all clients while maintaining patient privacy</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4">🔄</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">End-to-End Lifecycle Visibility</h3>
+                    <p class="text-gray-600">Marketing → Care → Retention tracked in one unified platform</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4">📈</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Real-Time Leadership Insights</h3>
+                    <p class="text-gray-600">C-suite dashboard with KPIs, provider load, patient engagement, revenue efficiency</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Zero-Touch Provisioning</h3>
+                    <p class="text-gray-600">Instant onboarding with automated setup for new practices and providers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 medical-gradient text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Healthcare Delivery?</h2>
+            <p class="text-xl text-cyan-100 mb-8">Join leading healthcare organizations using AI to improve outcomes and efficiency</p>
+            <div class="flex justify-center space-x-4">
+                <button class="bg-white text-cyan-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                    Schedule Your Demo
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-cyan-600 transition">
+                    Download Whitepaper
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-4">BOTLACE</h4>
+                    <p class="text-gray-400">AI SaaS Operating System for Healthcare</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Platform</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">ClinicalOps AI</a></li>
+                        <li><a href="#" class="hover:text-white">MarketOps CRM</a></li>
+                        <li><a href="#" class="hover:text-white">RevenueOps</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">About</a></li>
+                        <li><a href="#" class="hover:text-white">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Compliance</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">HIPAA Compliance</a></li>
+                        <li><a href="#" class="hover:text-white">Security</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 BOTLACE. All rights reserved. HIPAA Compliant • SOC 2 Type II Certified</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Operations Chart
+        const ctx = document.getElementById('operationsChart').getContext('2d');
+        const operationsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [
+                    {
+                        label: 'Patient Appointments',
+                        data: [645, 712, 768, 847],
+                        backgroundColor: 'rgba(6, 182, 212, 0.7)',
+                        borderColor: 'rgb(6, 182, 212)',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Marketing Leads',
+                        data: [234, 298, 312, 356],
+                        backgroundColor: 'rgba(147, 51, 234, 0.7)',
+                        borderColor: 'rgb(147, 51, 234)',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Revenue ($K)',
+                        data: [187, 213, 241, 278],
+                        backgroundColor: 'rgba(34, 197, 94, 0.7)',
+                        borderColor: 'rgb(34, 197, 94)',
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

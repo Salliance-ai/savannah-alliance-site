@@ -1,181 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Savannah Alliance Company LLC | MIS, GRC & Healthcare IT</title>
-  <meta name="description" content="Savannah Alliance provides MIS, GRC consulting, RCM, and digital health solutions. Call (833) 50C-LAIM (833-502-5246).">
-  <meta name="keywords" content="Savannah Alliance, MIS consulting, GRC, RCM, healthcare IT, digital health, McKinney Texas">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {font-family: 'Inter', sans-serif; margin:0; padding:0; color:#0f2340; background-color:#fff;}
-    header {background:#fff; position:sticky; top:0; z-index:1000; border-bottom:1px solid #e0e0e0;}
-    .container {max-width:1200px; margin:0 auto; padding:0 20px;}
-    nav ul {display:flex; list-style:none; gap:20px; padding:0; margin:0;}
-    nav ul li a {text-decoration:none; color:#0f2340; font-weight:600;}
-    .hero {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; padding:80px 0; background:#f9f9f9;}
-    .hero-content {max-width:600px;}
-    .hero h1 {font-size:2.5rem; line-height:1.2;}
-    .hero p {margin-top:20px; color:#555;}
-    .btn-primary {background:#16325C; color:#fff; padding:12px 24px; border:none; border-radius:6px; cursor:pointer; font-weight:600;}
-    .btn-secondary {border:2px solid #16325C; color:#16325C; padding:10px 22px; border-radius:6px; text-decoration:none; font-weight:600;}
-    section {padding:80px 0;}
-    h2 {font-size:2rem; margin-bottom:20px;}
-    .services-grid, .case-grid, .clients-grid, .industries-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
-    .card {background:#fff; border:1px solid #e0e0e0; border-radius:12px; padding:20px; transition:0.3s;}
-    .card:hover {box-shadow:0 4px 16px rgba(0,0,0,0.1);}
-    footer {background:#0f2340; color:#fff; padding:60px 20px;}
-    footer a {color:#19A69A; text-decoration:none;}
-    input, textarea {width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; margin-bottom:10px;}
-    button[type=submit] {background:#19A69A; color:#fff; border:none; padding:12px 20px; border-radius:6px; cursor:pointer; font-weight:600;}
-    iframe {border:0; border-radius:12px; width:100%; height:300px;}
-    @media(max-width:768px){.hero{flex-direction:column; grid-template-columns:1fr;}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EIME™ & BOTLACE | AI SaaS Platform Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-purple {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-cyan {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 50%, #14b8a6 100%);
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-<body>
-
-<header>
-  <div class="container" style="display:flex; justify-content:space-between; align-items:center; padding:20px 0;">
-    <div><strong>Savannah Alliance</strong> | MIS & GRC</div>
-    <nav>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#industries">Industries</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#clients">Clients</a></li>
-        <li><a href="tel:+18335025246">(833) 50C-LAIM</a></li>
-      </ul>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="text-3xl font-bold">
+                        <span class="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">EIME™</span>
+                        <span class="text-gray-400 mx-2">&</span>
+                        <span class="bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent">BOTLACE</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="#platforms" class="text-gray-600 hover:text-gray-900 font-medium">Platforms</a>
+                    <a href="#features" class="text-gray-600 hover:text-gray-900 font-medium">Features</a>
+                    <a href="#documentation" class="text-gray-600 hover:text-gray-900 font-medium">Docs</a>
+                    <button class="gradient-purple text-white px-6 py-2 rounded-lg font-semibold hover:opacity-90">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
     </nav>
-  </div>
-</header>
 
-<section class="hero container">
-  <div class="hero-content">
-    <h1>Solving Healthcare & Technology Challenges with Strategic IT Solutions</h1>
-    <p>Savannah Alliance provides MIS, GRC, RCM, and digital health solutions tailored for healthcare and enterprise clients.</p>
-    <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
-      <button class="btn-primary" onclick="location.href='#services'">Explore Our Solutions</button>
-      <a class="btn-secondary" href="#contact">Contact Sales</a>
-    </div>
-  </div>
-  <div style="flex:1; text-align:center; padding:20px;">
-    <div style="background:#e0e0e0; height:300px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#aaa;">Hero Visual / Video</div>
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-cyan-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center animate-fade-in">
+                <div class="inline-block bg-gradient-to-r from-purple-100 to-cyan-100 px-6 py-2 rounded-full text-sm font-semibold text-purple-800 mb-6">
+                    🚀 The Future of AI SaaS is Here
+                </div>
+                <h1 class="text-6xl font-bold text-gray-900 mb-6">
+                    Where <span class="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Emotional Intelligence</span><br/>
+                    Meets <span class="bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent">Operational Excellence</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+                    Two revolutionary AI SaaS platforms: EIME™ for emotionally intelligent marketing, 
+                    and BOTLACE for AI-powered healthcare delivery.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="eime-platform/index.html" class="gradient-purple text-white px-8 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition inline-block">
+                        Explore EIME™ 🧠
+                    </a>
+                    <a href="botlace-platform/index.html" class="gradient-cyan text-white px-8 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition inline-block">
+                        Explore BOTLACE 🏥
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="services" class="container">
-  <h2>Our Core Services</h2>
-  <div class="services-grid">
-    <div class="card">
-      <h3>MIS & GRC Consulting</h3>
-      <p>Compliance frameworks, risk management, and information security.</p>
-    </div>
-    <div class="card">
-      <h3>Revenue Cycle Management (RCM)</h3>
-      <p>End-to-end billing, claims, and healthcare financial workflows.</p>
-    </div>
-    <div class="card">
-      <h3>Digital Health Ecosystem</h3>
-      <p>Unified healthcare access platform and insurance integration.</p>
-    </div>
-    <div class="card">
-      <h3>Systems Integration</h3>
-      <p>Data management, interoperability, and automation.</p>
-    </div>
-  </div>
-</section>
+    <!-- Platforms Overview -->
+    <section id="platforms" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-gray-900 mb-4">Two Platforms, Infinite Possibilities</h2>
+                <p class="text-xl text-gray-600">Revolutionary AI-powered solutions for different industries</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- EIME™ Card -->
+                <div class="hover-lift bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-2xl border-2 border-purple-200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 gradient-purple rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-white text-3xl">🧠</span>
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-gray-900">EIME™</h3>
+                            <p class="text-purple-600 font-semibold">Emotionally Intelligent Marketing Engine</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-700 text-lg mb-6">
+                        The first AI that understands emotion, built to translate digital behaviors into emotional 
+                        insights that empower brands to market like a therapist, not a salesman.
+                    </p>
+                    
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-start">
+                            <span class="text-purple-600 mr-2 text-xl">✓</span>
+                            <span class="text-gray-700">Real-time emotion detection from customer feedback</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-purple-600 mr-2 text-xl">✓</span>
+                            <span class="text-gray-700">Trust Score calculation (0-100) for every interaction</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-purple-600 mr-2 text-xl">✓</span>
+                            <span class="text-gray-700">Therapist Framework for empathetic messaging</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-purple-600 mr-2 text-xl">✓</span>
+                            <span class="text-gray-700">Adaptive AI intensity based on user comfort</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="text-2xl font-bold text-purple-600">78</div>
+                            <div class="text-sm text-gray-600">Avg Trust Score</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="text-2xl font-bold text-purple-600">+15%</div>
+                            <div class="text-sm text-gray-600">Trust Velocity</div>
+                        </div>
+                    </div>
+                    
+                    <a href="eime-platform/index.html" class="block w-full gradient-purple text-white px-6 py-3 rounded-lg font-semibold text-center hover:opacity-90 transition mb-3">
+                        View EIME™ Platform
+                    </a>
+                    <a href="eime-platform/demo.html" class="block w-full border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-lg font-semibold text-center hover:bg-purple-50 transition">
+                        Try Interactive Demo
+                    </a>
+                </div>
 
-<section id="industries" class="container">
-  <h2>Industries</h2>
-  <div class="industries-grid">
-    <div class="card"><h3>Healthcare</h3><p>Hospitals, clinics, and payors.</p></div>
-    <div class="card"><h3>Insurance</h3><p>Insurer integrations, claims automation, and risk modeling.</p></div>
-    <div class="card"><h3>Enterprise IT</h3><p>MIS, GRC & data governance.</p></div>
-  </div>
-</section>
+                <!-- BOTLACE Card -->
+                <div class="hover-lift bg-gradient-to-br from-cyan-50 to-teal-50 p-8 rounded-2xl border-2 border-cyan-200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 gradient-cyan rounded-xl flex items-center justify-center mr-4">
+                            <span class="text-white text-3xl">🏥</span>
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-gray-900">BOTLACE</h3>
+                            <p class="text-cyan-600 font-semibold">AI SaaS Operating System for Healthcare</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-700 text-lg mb-6">
+                        The world's first AI-SaaS operating system for healthcare delivery, unifying clinical intelligence, 
+                        operations, and marketing under one adaptive AI layer.
+                    </p>
+                    
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-start">
+                            <span class="text-cyan-600 mr-2 text-xl">✓</span>
+                            <span class="text-gray-700">ClinicalOps AI with 40% productivity boost</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-cyan-600 mr-2 text-xl">✓</span>
+                            <span class="text-gray-700">GoHighLevel CRM integration for patient acquisition</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-cyan-600 mr-2 text-xl">✓</span>
+                            <span class="text-gray-700">HIPAA-compliant federated AI learning</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-cyan-600 mr-2 text-xl">✓</span>
+                            <span class="text-gray-700">End-to-end patient lifecycle management</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="text-2xl font-bold text-cyan-600">2,847</div>
+                            <div class="text-sm text-gray-600">Patients Managed</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="text-2xl font-bold text-cyan-600">99.8%</div>
+                            <div class="text-sm text-gray-600">Compliance Score</div>
+                        </div>
+                    </div>
+                    
+                    <a href="botlace-platform/index.html" class="block w-full gradient-cyan text-white px-6 py-3 rounded-lg font-semibold text-center hover:opacity-90 transition mb-3">
+                        View BOTLACE Platform
+                    </a>
+                    <a href="#documentation" class="block w-full border-2 border-cyan-600 text-cyan-600 px-6 py-3 rounded-lg font-semibold text-center hover:bg-cyan-50 transition">
+                        Read Documentation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="about" class="container">
-  <h2>About Us</h2>
-  <p>Based in McKinney, Texas, Savannah Alliance delivers technology and governance solutions to improve access and reduce costs in healthcare.</p>
-  <div class="services-grid">
-    <div class="card"><strong>CEO — Jane Doe</strong><p>15+ years in healthcare IT</p></div>
-    <div class="card"><strong>CTO — John Smith</strong><p>Systems integration & cloud architecture</p></div>
-    <div class="card"><strong>Head of RCM — Mary Johnson</strong><p>Revenue operations and payer relations</p></div>
-  </div>
-</section>
+    <!-- Key Features Comparison -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-gray-900 mb-4">Platform Capabilities</h2>
+                <p class="text-xl text-gray-600">Built on cutting-edge AI and cyber-psychological principles</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Emotion Detection</h3>
+                    <p class="text-gray-600">EIME™ analyzes text for emotional signals: anxiety, trust, curiosity, satisfaction</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+                    <div class="text-4xl mb-4">🩺</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Clinical AI</h3>
+                    <p class="text-gray-600">BOTLACE generates FHIR-compliant clinical summaries and ICD coding</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Trust Dashboards</h3>
+                    <p class="text-gray-600">Real-time metrics for emotional trust, transparency, and AI acceptance</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+                    <div class="text-4xl mb-4">🔮</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Predictive Analytics</h3>
+                    <p class="text-gray-600">Churn prediction, revenue forecasting, and lead scoring with AI</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Therapist Framework</h3>
+                    <p class="text-gray-600">Empathetic messaging that validates before presenting solutions</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">GHL Integration</h3>
+                    <p class="text-gray-600">Native GoHighLevel CRM for complete patient journey automation</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">HIPAA Compliance</h3>
+                    <p class="text-gray-600">SOC 2 Type II certified with predictive compliance monitoring</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Real-time Processing</h3>
+                    <p class="text-gray-600">Instant analysis, scoring, and recommendations across all platforms</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="clients" class="container">
-  <h2>Clients & Partners</h2>
-  <div class="clients-grid">
-    <div class="card">Client 1</div>
-    <div class="card">Client 2</div>
-    <div class="card">Client 3</div>
-    <div class="card">Client 4</div>
-    <div class="card">Client 5</div>
-    <div class="card">Client 6</div>
-  </div>
-</section>
+    <!-- Documentation & Resources -->
+    <section id="documentation" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-gray-900 mb-4">Documentation & Resources</h2>
+                <p class="text-xl text-gray-600">Everything you need to get started</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="README.md" class="block bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-xl border-2 border-purple-200 hover-lift">
+                    <div class="text-4xl mb-4">📖</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">README</h3>
+                    <p class="text-gray-700 mb-4">Complete platform overview, architecture, and quick start guide</p>
+                    <span class="text-purple-600 font-semibold">Read Documentation →</span>
+                </a>
+                
+                <a href="API_DOCUMENTATION.md" class="block bg-gradient-to-br from-cyan-50 to-cyan-100 p-8 rounded-xl border-2 border-cyan-200 hover-lift">
+                    <div class="text-4xl mb-4">🔌</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">API Reference</h3>
+                    <p class="text-gray-700 mb-4">Comprehensive API documentation for both EIME™ and BOTLACE</p>
+                    <span class="text-cyan-600 font-semibold">View API Docs →</span>
+                </a>
+                
+                <a href="IMPLEMENTATION_GUIDE.md" class="block bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl border-2 border-green-200 hover-lift">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Implementation Guide</h3>
+                    <p class="text-gray-700 mb-4">Step-by-step integration guide with code examples and best practices</p>
+                    <span class="text-green-600 font-semibold">Get Started →</span>
+                </a>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="mt-12 bg-gray-50 p-8 rounded-xl">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Quick Access</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <a href="eime-platform/demo.html" class="text-center p-4 bg-white rounded-lg hover:shadow-md transition">
+                        <div class="text-3xl mb-2">🧪</div>
+                        <div class="text-sm font-semibold text-gray-900">Try EIME™ Demo</div>
+                    </a>
+                    <a href="eime-platform/js/sentiment-engine.js" class="text-center p-4 bg-white rounded-lg hover:shadow-md transition">
+                        <div class="text-3xl mb-2">⚙️</div>
+                        <div class="text-sm font-semibold text-gray-900">Sentiment Engine</div>
+                    </a>
+                    <a href="botlace-platform/integrations/ghl-connector.js" class="text-center p-4 bg-white rounded-lg hover:shadow-md transition">
+                        <div class="text-3xl mb-2">🔗</div>
+                        <div class="text-sm font-semibold text-gray-900">GHL Connector</div>
+                    </a>
+                    <a href="#" class="text-center p-4 bg-white rounded-lg hover:shadow-md transition">
+                        <div class="text-3xl mb-2">💬</div>
+                        <div class="text-sm font-semibold text-gray-900">Community</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="contact" class="container">
-  <h2>Contact Us</h2>
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px;">
-    <div>
-      <form id="contact-form">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="company" placeholder="Company">
-        <textarea name="message" placeholder="Message"></textarea>
-        <button type="submit">Send Message</button>
-        <p id="form-status" style="margin-top:10px;"></p>
-      </form>
-      <p>Or call <a href="tel:+18335025246">(833) 50C-LAIM</a></p>
-    </div>
-    <div>
-      <h3>Our Location</h3>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3351.627808145338!2d-96.7104736!3d33.1386601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c180f22c09d0d%3A0xc58d1099a7efb7e7!2s7300%20TX-121%2C%20McKinney%2C%20TX%2075070!5e0!3m2!1sen!2sus!4v1696354743259" allowfullscreen loading="lazy"></iframe>
-    </div>
-  </div>
-</section>
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-5xl font-bold mb-6">Ready to Transform Your Business?</h2>
+            <p class="text-xl mb-10 text-purple-100">
+                Join the future of AI-powered emotional intelligence and healthcare delivery
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="eime-platform/index.html" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-50 transition inline-block">
+                    Start with EIME™
+                </a>
+                <a href="botlace-platform/index.html" class="bg-white text-cyan-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-cyan-50 transition inline-block">
+                    Start with BOTLACE
+                </a>
+                <a href="eime-platform/demo.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-600 transition inline-block">
+                    Try Interactive Demo
+                </a>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px;">
-    <div>&copy; 2025 Savannah Alliance Company LLC. All rights reserved.</div>
-    <div>7300 State Highway 121, McKinney, TX 75070 | <a href="tel:+18335025246">(833) 50C-LAIM</a> | <a href="mailto:info@savannahalliance.com">info@savannahalliance.com</a></div>
-  </div>
-</footer>
-
-<script>
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const status = document.getElementById('form-status');
-
-  fetch('https://your-serverless-endpoint.com/submit', {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({
-      name: form.name.value,
-      email: form.email.value,
-      company: form.company.value,
-      message: form.message.value
-    })
-  })
-  .then(response => {
-    if(response.ok) {
-      status.textContent = 'Message sent successfully!';
-      status.style.color = 'green';
-      form.reset();
-    } else {
-      status.textContent = 'Error sending message. Please try again.';
-      status.style.color = 'red';
-    }
-  })
-  .catch(() => {
-    status.textContent = 'Error sending message. Please check your connection.';
-    status.style.color = 'red';
-  });
-});
-</script>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-4">EIME™</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="eime-platform/index.html" class="hover:text-white">Platform</a></li>
+                        <li><a href="eime-platform/demo.html" class="hover:text-white">Interactive Demo</a></li>
+                        <li><a href="#" class="hover:text-white">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">BOTLACE</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="botlace-platform/index.html" class="hover:text-white">Platform</a></li>
+                        <li><a href="#" class="hover:text-white">Healthcare Solutions</a></li>
+                        <li><a href="#" class="hover:text-white">Compliance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="README.md" class="hover:text-white">Documentation</a></li>
+                        <li><a href="API_DOCUMENTATION.md" class="hover:text-white">API Reference</a></li>
+                        <li><a href="IMPLEMENTATION_GUIDE.md" class="hover:text-white">Implementation Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">About</a></li>
+                        <li><a href="#" class="hover:text-white">Contact</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 mb-2">
+                    <span class="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent font-bold">EIME™</span> 
+                    <span class="text-gray-600 mx-2">&</span>
+                    <span class="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent font-bold">BOTLACE</span>
+                </p>
+                <p class="text-gray-500 text-sm">
+                    &copy; 2025 All rights reserved. Built with emotional intelligence and clinical excellence.
+                </p>
+                <p class="text-gray-600 text-xs mt-2">
+                    HIPAA Compliant • SOC 2 Type II Certified • FHIR Native
+                </p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
