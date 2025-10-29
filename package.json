@@ -1,0 +1,54 @@
+{
+  "name": "botlace-platform",
+  "version": "1.0.0",
+  "description": "AI-SaaS Operating System for Healthcare Delivery",
+  "private": true,
+  "workspaces": [
+    "backend/services/*",
+    "backend/shared/*",
+    "frontend/*"
+  ],
+  "scripts": {
+    "dev": "lerna run dev --parallel",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "lint": "lerna run lint",
+    "deploy": "npm run build && npm run deploy:services",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "k8s:deploy": "kubectl apply -f infrastructure/kubernetes/",
+    "db:migrate": "lerna run migrate --scope='@botlace/services-*'",
+    "start:clinical-ops": "npm run dev --workspace=@botlace/services-clinical-ops",
+    "start:scheduling": "npm run dev --workspace=@botlace/services-scheduling",
+    "start:patient360": "npm run dev --workspace=@botlace/services-patient360",
+    "start:marketops": "npm run dev --workspace=@botlace/services-marketops-crm",
+    "start:revenue-ops": "npm run dev --workspace=@botlace/services-revenue-ops",
+    "start:enterprise": "npm run dev --workspace=@botlace/services-enterprise-intelligence",
+    "start:auth": "npm run dev --workspace=@botlace/services-auth",
+    "start:gateway": "npm run dev --workspace=@botlace/services-api-gateway"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "lerna": "^8.0.0",
+    "typescript": "^5.3.0",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "keywords": [
+    "healthcare",
+    "ai",
+    "saas",
+    "fhir",
+    "ehr",
+    "clinical-intelligence"
+  ],
+  "author": "Botlace AI Systems",
+  "license": "PROPRIETARY"
+}

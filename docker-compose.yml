@@ -1,0 +1,307 @@
+version: '3.9'
+
+services:
+  # Infrastructure Services
+  
+  postgres:
+    image: postgres:16-alpine
+    container_name: botlace-postgres
+    environment:
+      POSTGRES_USER: botlace
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-dev_password_change_in_prod}
+      POSTGRES_DB: botlace
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - botlace-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: botlace-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - botlace-network
+
+  mongodb:
+    image: mongo:7
+    container_name: botlace-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: botlace
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-dev_password_change_in_prod}
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - botlace-network
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: botlace-kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    networks:
+      - botlace-network
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: botlace-zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    networks:
+      - botlace-network
+
+  elasticsearch:
+    image: elasticsearch:8.11.0
+    container_name: botlace-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    networks:
+      - botlace-network
+
+  # Microservices
+
+  api-gateway:
+    build:
+      context: ./backend/services/api-gateway
+      dockerfile: Dockerfile
+    container_name: botlace-api-gateway
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      REDIS_URL: redis://redis:6379
+      DATABASE_URL: postgresql://botlace:${DB_PASSWORD:-dev_password_change_in_prod}@postgres:5432/botlace
+    depends_on:
+      - postgres
+      - redis
+      - kafka
+    networks:
+      - botlace-network
+    volumes:
+      - ./backend/services/api-gateway:/app
+      - /app/node_modules
+
+  auth-service:
+    build:
+      context: ./backend/services/auth
+      dockerfile: Dockerfile
+    container_name: botlace-auth-service
+    ports:
+      - "3001:3001"
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      DATABASE_URL: postgresql://botlace:${DB_PASSWORD:-dev_password_change_in_prod}@postgres:5432/botlace
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: ${JWT_SECRET:-dev_secret_change_in_prod}
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - botlace-network
+    volumes:
+      - ./backend/services/auth:/app
+      - /app/node_modules
+
+  clinical-ops-service:
+    build:
+      context: ./backend/services/clinical-ops
+      dockerfile: Dockerfile
+    container_name: botlace-clinical-ops
+    ports:
+      - "3002:3002"
+    environment:
+      NODE_ENV: development
+      PORT: 3002
+      DATABASE_URL: postgresql://botlace:${DB_PASSWORD:-dev_password_change_in_prod}@postgres:5432/botlace
+      KAFKA_BROKER: kafka:9092
+      AI_ENGINE_URL: http://ai-engine:5000
+    depends_on:
+      - postgres
+      - kafka
+    networks:
+      - botlace-network
+    volumes:
+      - ./backend/services/clinical-ops:/app
+      - /app/node_modules
+
+  scheduling-service:
+    build:
+      context: ./backend/services/scheduling
+      dockerfile: Dockerfile
+    container_name: botlace-scheduling
+    ports:
+      - "3003:3003"
+    environment:
+      NODE_ENV: development
+      PORT: 3003
+      DATABASE_URL: postgresql://botlace:${DB_PASSWORD:-dev_password_change_in_prod}@postgres:5432/botlace
+      KAFKA_BROKER: kafka:9092
+    depends_on:
+      - postgres
+      - kafka
+    networks:
+      - botlace-network
+    volumes:
+      - ./backend/services/scheduling:/app
+      - /app/node_modules
+
+  patient360-service:
+    build:
+      context: ./backend/services/patient360
+      dockerfile: Dockerfile
+    container_name: botlace-patient360
+    ports:
+      - "3004:3004"
+    environment:
+      NODE_ENV: development
+      PORT: 3004
+      DATABASE_URL: postgresql://botlace:${DB_PASSWORD:-dev_password_change_in_prod}@postgres:5432/botlace
+      MONGODB_URL: mongodb://botlace:${MONGO_PASSWORD:-dev_password_change_in_prod}@mongodb:27017/botlace
+    depends_on:
+      - postgres
+      - mongodb
+    networks:
+      - botlace-network
+    volumes:
+      - ./backend/services/patient360:/app
+      - /app/node_modules
+
+  marketops-crm-service:
+    build:
+      context: ./backend/services/marketops-crm
+      dockerfile: Dockerfile
+    container_name: botlace-marketops-crm
+    ports:
+      - "3005:3005"
+    environment:
+      NODE_ENV: development
+      PORT: 3005
+      DATABASE_URL: postgresql://botlace:${DB_PASSWORD:-dev_password_change_in_prod}@postgres:5432/botlace
+      GHL_API_KEY: ${GHL_API_KEY}
+      GHL_API_URL: https://rest.gohighlevel.com/v1
+    depends_on:
+      - postgres
+    networks:
+      - botlace-network
+    volumes:
+      - ./backend/services/marketops-crm:/app
+      - /app/node_modules
+
+  revenue-ops-service:
+    build:
+      context: ./backend/services/revenue-ops
+      dockerfile: Dockerfile
+    container_name: botlace-revenue-ops
+    ports:
+      - "3006:3006"
+    environment:
+      NODE_ENV: development
+      PORT: 3006
+      DATABASE_URL: postgresql://botlace:${DB_PASSWORD:-dev_password_change_in_prod}@postgres:5432/botlace
+      STRIPE_API_KEY: ${STRIPE_API_KEY}
+    depends_on:
+      - postgres
+    networks:
+      - botlace-network
+    volumes:
+      - ./backend/services/revenue-ops:/app
+      - /app/node_modules
+
+  enterprise-intelligence-service:
+    build:
+      context: ./backend/services/enterprise-intelligence
+      dockerfile: Dockerfile
+    container_name: botlace-enterprise-intelligence
+    ports:
+      - "3007:3007"
+    environment:
+      NODE_ENV: development
+      PORT: 3007
+      DATABASE_URL: postgresql://botlace:${DB_PASSWORD:-dev_password_change_in_prod}@postgres:5432/botlace
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+    depends_on:
+      - postgres
+      - elasticsearch
+    networks:
+      - botlace-network
+    volumes:
+      - ./backend/services/enterprise-intelligence:/app
+      - /app/node_modules
+
+  # AI Engine (Python FastAPI)
+  ai-engine:
+    build:
+      context: ./backend/shared/ai-engine
+      dockerfile: Dockerfile
+    container_name: botlace-ai-engine
+    ports:
+      - "5000:5000"
+    environment:
+      PYTHONUNBUFFERED: 1
+      PORT: 5000
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      - redis
+    networks:
+      - botlace-network
+    volumes:
+      - ./backend/shared/ai-engine:/app
+      - ai_models:/app/models
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: botlace-frontend
+    ports:
+      - "3100:3100"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:3000
+      NODE_ENV: development
+    depends_on:
+      - api-gateway
+    networks:
+      - botlace-network
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+networks:
+  botlace-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
+  mongo_data:
+  elasticsearch_data:
+  ai_models:

@@ -3,176 +3,988 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Savannah Alliance Company LLC | MIS, GRC & Healthcare IT</title>
-  <meta name="description" content="Savannah Alliance provides MIS, GRC consulting, RCM, and digital health solutions. Call (833) 50C-LAIM (833-502-5246).">
-  <meta name="keywords" content="Savannah Alliance, MIS consulting, GRC, RCM, healthcare IT, digital health, McKinney Texas">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Botlace | AI Operating System for Healthcare</title>
+  <meta name="description" content="The world's first AI-SaaS operating system for healthcare delivery, unifying clinical intelligence, operations, and marketing under one adaptive AI layer.">
+  <meta name="keywords" content="Botlace, AI healthcare, SaaS, clinical intelligence, FHIR, EHR integration, healthcare operations">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {font-family: 'Inter', sans-serif; margin:0; padding:0; color:#0f2340; background-color:#fff;}
-    header {background:#fff; position:sticky; top:0; z-index:1000; border-bottom:1px solid #e0e0e0;}
-    .container {max-width:1200px; margin:0 auto; padding:0 20px;}
-    nav ul {display:flex; list-style:none; gap:20px; padding:0; margin:0;}
-    nav ul li a {text-decoration:none; color:#0f2340; font-weight:600;}
-    .hero {display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; padding:80px 0; background:#f9f9f9;}
-    .hero-content {max-width:600px;}
-    .hero h1 {font-size:2.5rem; line-height:1.2;}
-    .hero p {margin-top:20px; color:#555;}
-    .btn-primary {background:#16325C; color:#fff; padding:12px 24px; border:none; border-radius:6px; cursor:pointer; font-weight:600;}
-    .btn-secondary {border:2px solid #16325C; color:#16325C; padding:10px 22px; border-radius:6px; text-decoration:none; font-weight:600;}
-    section {padding:80px 0;}
-    h2 {font-size:2rem; margin-bottom:20px;}
-    .services-grid, .case-grid, .clients-grid, .industries-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
-    .card {background:#fff; border:1px solid #e0e0e0; border-radius:12px; padding:20px; transition:0.3s;}
-    .card:hover {box-shadow:0 4px 16px rgba(0,0,0,0.1);}
-    footer {background:#0f2340; color:#fff; padding:60px 20px;}
-    footer a {color:#19A69A; text-decoration:none;}
-    input, textarea {width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; margin-bottom:10px;}
-    button[type=submit] {background:#19A69A; color:#fff; border:none; padding:12px 20px; border-radius:6px; cursor:pointer; font-weight:600;}
-    iframe {border:0; border-radius:12px; width:100%; height:300px;}
-    @media(max-width:768px){.hero{flex-direction:column; grid-template-columns:1fr;}}
+    :root {
+      --primary: #0066FF;
+      --primary-dark: #0052CC;
+      --secondary: #00D4AA;
+      --dark: #0A1628;
+      --dark-secondary: #1A2942;
+      --text-light: #8B93A6;
+      --border: #2A3F5F;
+      --success: #00D4AA;
+      --gradient: linear-gradient(135deg, #0066FF 0%, #00D4AA 100%);
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark);
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    header.scrolled {
+      box-shadow: 0 4px 24px rgba(0, 102, 255, 0.15);
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      font-size: 15px;
+    }
+    
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+    
+    .btn {
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 15px;
+    }
+    
+    .btn-primary {
+      background: var(--gradient);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0, 102, 255, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 160px 0 120px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(0, 102, 255, 0.15) 0%, transparent 70%);
+      top: -200px;
+      right: -200px;
+      pointer-events: none;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      text-align: center;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(0, 212, 170, 0.1);
+      border: 1px solid rgba(0, 212, 170, 0.3);
+      border-radius: 50px;
+      color: var(--secondary);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    
+    .hero h1 {
+      font-size: 64px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #fff 0%, #8B93A6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero p {
+      font-size: 20px;
+      color: var(--text-light);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+    
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    /* Stats Section */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+      margin-top: 80px;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 32px;
+      background: var(--dark-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    
+    .stat-number {
+      font-size: 48px;
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .stat-label {
+      color: var(--text-light);
+      margin-top: 8px;
+    }
+    
+    /* Section Styles */
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+    
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+    
+    .section-tag {
+      color: var(--secondary);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+    
+    .section-header h2 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    
+    .section-header p {
+      font-size: 18px;
+      color: var(--text-light);
+    }
+    
+    /* Architecture Section */
+    .architecture-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+      margin-top: 60px;
+    }
+    
+    .arch-card {
+      background: var(--dark-secondary);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .arch-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .arch-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .arch-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 102, 255, 0.2);
+    }
+    
+    .arch-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--gradient);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+    
+    .arch-card h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    
+    .arch-card ul {
+      list-style: none;
+      margin-top: 16px;
+    }
+    
+    .arch-card li {
+      color: var(--text-light);
+      padding: 8px 0;
+      padding-left: 24px;
+      position: relative;
+    }
+    
+    .arch-card li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+      font-weight: bold;
+    }
+    
+    /* Modules Grid */
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+    
+    .module-card {
+      background: var(--dark-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+    
+    .module-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+    }
+    
+    .module-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    
+    .module-icon {
+      font-size: 32px;
+    }
+    
+    .module-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    
+    .module-card p {
+      color: var(--text-light);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    
+    .module-highlight {
+      margin-top: 16px;
+      padding: 12px;
+      background: rgba(0, 212, 170, 0.1);
+      border-left: 3px solid var(--secondary);
+      border-radius: 4px;
+      font-size: 14px;
+      color: var(--secondary);
+      font-weight: 600;
+    }
+    
+    /* Pricing Section */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 60px;
+    }
+    
+    .pricing-card {
+      background: var(--dark-secondary);
+      border: 2px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .pricing-card.featured {
+      border-color: var(--primary);
+      background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 212, 170, 0.05) 100%);
+      transform: scale(1.05);
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 16px 48px rgba(0, 102, 255, 0.2);
+    }
+    
+    .pricing-card.featured:hover {
+      transform: translateY(-8px) scale(1.07);
+    }
+    
+    .featured-badge {
+      position: absolute;
+      top: -12px;
+      right: 32px;
+      background: var(--gradient);
+      color: #fff;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .pricing-tier {
+      font-size: 14px;
+      color: var(--secondary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .pricing-price {
+      font-size: 56px;
+      font-weight: 800;
+      margin: 16px 0;
+    }
+    
+    .pricing-price span {
+      font-size: 24px;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+    
+    .pricing-description {
+      color: var(--text-light);
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+    
+    .pricing-features li {
+      padding: 12px 0;
+      padding-left: 28px;
+      position: relative;
+      color: var(--text-light);
+    }
+    
+    .pricing-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    /* Differentiators */
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+    
+    .diff-card {
+      background: var(--dark-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .diff-card:hover {
+      border-color: var(--secondary);
+      transform: translateY(-4px);
+    }
+    
+    .diff-emoji {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    
+    .diff-card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    
+    .diff-card p {
+      color: var(--text-light);
+      font-size: 14px;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 170, 0.1) 100%);
+      border: 2px solid var(--border);
+      border-radius: 24px;
+      padding: 80px 40px;
+      text-align: center;
+      margin: 100px 0;
+    }
+    
+    .cta-section h2 {
+      font-size: 48px;
+      margin-bottom: 24px;
+    }
+    
+    .cta-section p {
+      font-size: 20px;
+      color: var(--text-light);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark-secondary);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 32px;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    
+    .footer-brand h3 {
+      font-size: 24px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    
+    .footer-brand p {
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    
+    .footer-links h4 {
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+    
+    .footer-links ul {
+      list-style: none;
+    }
+    
+    .footer-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      display: block;
+      padding: 6px 0;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--secondary);
+    }
+    
+    .footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero h1 {
+        font-size: 40px;
+      }
+      
+      .hero p {
+        font-size: 18px;
+      }
+      
+      .section-header h2 {
+        font-size: 36px;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      
+      .pricing-card.featured {
+        transform: scale(1);
+      }
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="container" style="display:flex; justify-content:space-between; align-items:center; padding:20px 0;">
-    <div><strong>Savannah Alliance</strong> | MIS & GRC</div>
+<header id="header">
+  <div class="container">
     <nav>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#industries">Industries</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#clients">Clients</a></li>
-        <li><a href="tel:+18335025246">(833) 50C-LAIM</a></li>
+      <div class="logo">BOTLACE</div>
+      <ul class="nav-links">
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="btn btn-primary">Request Demo</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<section class="hero container">
-  <div class="hero-content">
-    <h1>Solving Healthcare & Technology Challenges with Strategic IT Solutions</h1>
-    <p>Savannah Alliance provides MIS, GRC, RCM, and digital health solutions tailored for healthcare and enterprise clients.</p>
-    <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
-      <button class="btn-primary" onclick="location.href='#services'">Explore Our Solutions</button>
-      <a class="btn-secondary" href="#contact">Contact Sales</a>
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="badge">🚀 AI Operating System for Healthcare</div>
+      <h1>The Future of Healthcare Delivery is Intelligent</h1>
+      <p>Unifying clinical intelligence, operations, and marketing under one adaptive AI layer. Built for scalability, compliance, and continuous learning.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Schedule Demo</a>
+        <a href="#architecture" class="btn btn-secondary">Explore Platform</a>
+      </div>
     </div>
-  </div>
-  <div style="flex:1; text-align:center; padding:20px;">
-    <div style="background:#e0e0e0; height:300px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#aaa;">Hero Visual / Video</div>
-  </div>
-</section>
-
-<section id="services" class="container">
-  <h2>Our Core Services</h2>
-  <div class="services-grid">
-    <div class="card">
-      <h3>MIS & GRC Consulting</h3>
-      <p>Compliance frameworks, risk management, and information security.</p>
-    </div>
-    <div class="card">
-      <h3>Revenue Cycle Management (RCM)</h3>
-      <p>End-to-end billing, claims, and healthcare financial workflows.</p>
-    </div>
-    <div class="card">
-      <h3>Digital Health Ecosystem</h3>
-      <p>Unified healthcare access platform and insurance integration.</p>
-    </div>
-    <div class="card">
-      <h3>Systems Integration</h3>
-      <p>Data management, interoperability, and automation.</p>
+    
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-number">40%</div>
+        <div class="stat-label">Clinical Productivity Increase</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">HIPAA Compliant</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">AI-Powered Intelligence</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="industries" class="container">
-  <h2>Industries</h2>
-  <div class="industries-grid">
-    <div class="card"><h3>Healthcare</h3><p>Hospitals, clinics, and payors.</p></div>
-    <div class="card"><h3>Insurance</h3><p>Insurer integrations, claims automation, and risk modeling.</p></div>
-    <div class="card"><h3>Enterprise IT</h3><p>MIS, GRC & data governance.</p></div>
-  </div>
-</section>
-
-<section id="about" class="container">
-  <h2>About Us</h2>
-  <p>Based in McKinney, Texas, Savannah Alliance delivers technology and governance solutions to improve access and reduce costs in healthcare.</p>
-  <div class="services-grid">
-    <div class="card"><strong>CEO — Jane Doe</strong><p>15+ years in healthcare IT</p></div>
-    <div class="card"><strong>CTO — John Smith</strong><p>Systems integration & cloud architecture</p></div>
-    <div class="card"><strong>Head of RCM — Mary Johnson</strong><p>Revenue operations and payer relations</p></div>
-  </div>
-</section>
-
-<section id="clients" class="container">
-  <h2>Clients & Partners</h2>
-  <div class="clients-grid">
-    <div class="card">Client 1</div>
-    <div class="card">Client 2</div>
-    <div class="card">Client 3</div>
-    <div class="card">Client 4</div>
-    <div class="card">Client 5</div>
-    <div class="card">Client 6</div>
-  </div>
-</section>
-
-<section id="contact" class="container">
-  <h2>Contact Us</h2>
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px;">
-    <div>
-      <form id="contact-form">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="company" placeholder="Company">
-        <textarea name="message" placeholder="Message"></textarea>
-        <button type="submit">Send Message</button>
-        <p id="form-status" style="margin-top:10px;"></p>
-      </form>
-      <p>Or call <a href="tel:+18335025246">(833) 50C-LAIM</a></p>
+<section id="architecture">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Core Architecture</div>
+      <h2>AI SaaS Operating System Built for Healthcare</h2>
+      <p>Three-layer architecture designed for medical-grade intelligence, seamless integration, and enterprise scalability.</p>
     </div>
-    <div>
-      <h3>Our Location</h3>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3351.627808145338!2d-96.7104736!3d33.1386601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c180f22c09d0d%3A0xc58d1099a7efb7e7!2s7300%20TX-121%2C%20McKinney%2C%20TX%2075070!5e0!3m2!1sen!2sus!4v1696354743259" allowfullscreen loading="lazy"></iframe>
+    
+    <div class="architecture-grid">
+      <div class="arch-card">
+        <div class="arch-icon">🧠</div>
+        <h3>AI Operating Layer (ACRE)</h3>
+        <p>Medical-grade reasoning engine at the core of every interaction.</p>
+        <ul>
+          <li>Trained on FHIR and evidence-based clinical standards</li>
+          <li>Adaptive decision intelligence per clinic specialty</li>
+          <li>Auto-generated clinical summaries and chart notes</li>
+          <li>Real-time treatment plan support</li>
+        </ul>
+      </div>
+      
+      <div class="arch-card">
+        <div class="arch-icon">🔗</div>
+        <h3>Data & Integration Mesh</h3>
+        <p>Secure, intelligent connectivity to your existing healthcare ecosystem.</p>
+        <ul>
+          <li>FHIR APIs for Epic, ICANotes, and Tebra</li>
+          <li>Federated AI learning without exposing patient data</li>
+          <li>HIPAA-grade compliance with AI-driven auditing</li>
+          <li>Real-time synchronization across platforms</li>
+        </ul>
+      </div>
+      
+      <div class="arch-card">
+        <div class="arch-icon">⚡</div>
+        <h3>SaaS Fabric</h3>
+        <p>Enterprise-ready microservices for instant deployment and scaling.</p>
+        <ul>
+          <li>Multitenant microservice framework</li>
+          <li>Zero-touch provisioning for instant onboarding</li>
+          <li>Modular: ClinicalOps, RevenueOps, MarketOps</li>
+          <li>Auto-scaling infrastructure</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="modules">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Platform Modules</div>
+      <h2>Complete Healthcare Operations Suite</h2>
+      <p>Six integrated modules covering every aspect of modern healthcare delivery.</p>
+    </div>
+    
+    <div class="modules-grid">
+      <div class="module-card">
+        <div class="module-header">
+          <div class="module-icon">📋</div>
+          <div>
+            <h3>ClinicalOps AI</h3>
+          </div>
+        </div>
+        <p>Real-time documentation, ICD coding, and treatment plan support.</p>
+        <p>Predictive follow-up engine reduces missed appointments.</p>
+        <div class="module-highlight">⚡ 40% improvement in clinical productivity</div>
+      </div>
+      
+      <div class="module-card">
+        <div class="module-header">
+          <div class="module-icon">📅</div>
+          <div>
+            <h3>CareNav & Smart Scheduling</h3>
+          </div>
+        </div>
+        <p>Predictive appointment balancing with AI-powered optimization.</p>
+        <p>AI assistant for front-desk and triage operations.</p>
+        <p>Adaptive patient routing across providers.</p>
+      </div>
+      
+      <div class="module-card">
+        <div class="module-header">
+          <div class="module-icon">👤</div>
+          <div>
+            <h3>Patient360 Hub</h3>
+          </div>
+        </div>
+        <p>Unified patient profile with behavioral, clinical, and engagement metrics.</p>
+        <p>AI-generated care summaries for continuity across teams.</p>
+        <p>Complete patient journey visibility.</p>
+      </div>
+      
+      <div class="module-card">
+        <div class="module-header">
+          <div class="module-icon">📈</div>
+          <div>
+            <h3>GHL-Powered MarketOps CRM</h3>
+          </div>
+        </div>
+        <p>GoHighLevel integrated as Operations Command Hub.</p>
+        <p>AI-driven lead scoring, outreach, and nurture automation.</p>
+        <p>Marketing funnel analytics connected to patient acquisition data.</p>
+        <div class="module-highlight">🎯 Predictive churn + LTV tracking</div>
+      </div>
+      
+      <div class="module-card">
+        <div class="module-header">
+          <div class="module-icon">💰</div>
+          <div>
+            <h3>RevenueOps Dashboard</h3>
+          </div>
+        </div>
+        <p>Smart billing anomaly detection powered by AI.</p>
+        <p>Predictive revenue cycle forecasting.</p>
+        <p>Integration-ready for QuickBooks, Stripe, or Athena.</p>
+      </div>
+      
+      <div class="module-card">
+        <div class="module-header">
+          <div class="module-icon">🏢</div>
+          <div>
+            <h3>Enterprise Intelligence Layer</h3>
+          </div>
+        </div>
+        <p>Unified data intelligence across clinics.</p>
+        <p>C-suite dashboard with provider load, engagement, revenue metrics.</p>
+        <p>Audit-ready compliance and AI explainability logs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Flexible Pricing</div>
+      <h2>Scale with Confidence</h2>
+      <p>Choose the plan that fits your organization's size and complexity.</p>
+    </div>
+    
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-tier">Starter Tier</div>
+        <div class="pricing-price">$499<span>/month</span></div>
+        <div class="pricing-description">Perfect for small practices getting started with AI</div>
+        <ul class="pricing-features">
+          <li>Up to 5 providers</li>
+          <li>GHL CRM included</li>
+          <li>ClinicalOps + scheduling automation</li>
+          <li>Patient360 Hub</li>
+          <li>Basic reporting</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary" style="width: 100%; text-align: center;">Get Started</a>
+      </div>
+      
+      <div class="pricing-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <div class="pricing-tier">Practice Tier</div>
+        <div class="pricing-price">$1,999<span>/month</span></div>
+        <div class="pricing-description">For growing practices ready to scale intelligently</div>
+        <ul class="pricing-features">
+          <li>Up to 25 providers</li>
+          <li>Full GHL MarketOps CRM + AI campaign engine</li>
+          <li>Predictive patient engagement analytics</li>
+          <li>Advanced scheduling optimization</li>
+          <li>RevenueOps Dashboard</li>
+          <li>Priority support + onboarding</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center;">Start Trial</a>
+      </div>
+      
+      <div class="pricing-card">
+        <div class="pricing-tier">Enterprise Tier</div>
+        <div class="pricing-price">$15,000<span>/month</span></div>
+        <div class="pricing-description">For healthcare systems and multi-site organizations</div>
+        <ul class="pricing-features">
+          <li>Unlimited providers</li>
+          <li>Epic Integration + federated AI training</li>
+          <li>Multi-site scalability</li>
+          <li>Custom compliance + white-label model</li>
+          <li>Enterprise Intelligence Layer</li>
+          <li>Dedicated success team + SLA</li>
+          <li>Usage-based scaling available</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary" style="width: 100%; text-align: center;">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Why Botlace</div>
+      <h2>Built Different from Day One</h2>
+      <p>The only healthcare platform with true AI-native architecture and complete operational visibility.</p>
+    </div>
+    
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-emoji">🎯</div>
+        <h3>Built-in GHL CRM</h3>
+        <p>Operational AI from marketing to retention, all in one platform</p>
+      </div>
+      
+      <div class="diff-card">
+        <div class="diff-emoji">🛡️</div>
+        <h3>Predictive Compliance</h3>
+        <p>AI audits before violations occur, not after</p>
+      </div>
+      
+      <div class="diff-card">
+        <div class="diff-emoji">🔬</div>
+        <h3>Federated AI Learning</h3>
+        <p>Cross-institution intelligence without compromising privacy</p>
+      </div>
+      
+      <div class="diff-card">
+        <div class="diff-emoji">🔄</div>
+        <h3>End-to-End Lifecycle</h3>
+        <p>Marketing → Care → Retention in one unified system</p>
+      </div>
+      
+      <div class="diff-card">
+        <div class="diff-emoji">📊</div>
+        <h3>Real-time Intelligence</h3>
+        <p>Insights for leadership and investors, always current</p>
+      </div>
+      
+      <div class="diff-card">
+        <div class="diff-emoji">⚡</div>
+        <h3>Zero-Touch Deployment</h3>
+        <p>From signup to production in hours, not months</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="cta-section">
+      <h2>Ready to Transform Your Healthcare Operations?</h2>
+      <p>Join the future of healthcare delivery with AI-powered intelligence that scales with your organization.</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:contact@botlace.ai" class="btn btn-primary">Schedule Demo</a>
+        <a href="mailto:investors@botlace.ai" class="btn btn-secondary">Investor Inquiries</a>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px;">
-    <div>&copy; 2025 Savannah Alliance Company LLC. All rights reserved.</div>
-    <div>7300 State Highway 121, McKinney, TX 75070 | <a href="tel:+18335025246">(833) 50C-LAIM</a> | <a href="mailto:info@savannahalliance.com">info@savannahalliance.com</a></div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>BOTLACE</h3>
+        <p>The world's first AI-SaaS operating system for healthcare delivery. Built for scalability, compliance, and continuous learning.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#architecture">Architecture</a></li>
+          <li><a href="#modules">Modules</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#">Documentation</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">HIPAA Compliance</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Botlace AI Systems. All rights reserved. | Healthcare AI Operating System</p>
+    </div>
   </div>
 </footer>
 
 <script>
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const status = document.getElementById('form-status');
+// Header scroll effect
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
 
-  fetch('https://your-serverless-endpoint.com/submit', {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({
-      name: form.name.value,
-      email: form.email.value,
-      company: form.company.value,
-      message: form.message.value
-    })
-  })
-  .then(response => {
-    if(response.ok) {
-      status.textContent = 'Message sent successfully!';
-      status.style.color = 'green';
-      form.reset();
-    } else {
-      status.textContent = 'Error sending message. Please try again.';
-      status.style.color = 'red';
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
-  })
-  .catch(() => {
-    status.textContent = 'Error sending message. Please check your connection.';
-    status.style.color = 'red';
   });
 });
 </script>
