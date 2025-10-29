@@ -29,6 +29,37 @@
     input, textarea {width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; margin-bottom:10px;}
     button[type=submit] {background:#19A69A; color:#fff; border:none; padding:12px 20px; border-radius:6px; cursor:pointer; font-weight:600;}
     iframe {border:0; border-radius:12px; width:100%; height:300px;}
+    /* EIME Demo Styles */
+    .subtle { color:#555; }
+    .row { display:flex; gap:20px; flex-wrap:wrap; }
+    .col { flex:1 1 320px; }
+    .panel { background:#fff; border:1px solid #e0e0e0; border-radius:12px; padding:20px; }
+    .badge { display:inline-block; padding:6px 10px; border-radius:999px; font-size:12px; font-weight:600; border:1px solid #e0e0e0; margin:4px 6px 0 0; }
+    .badge.anxiety { background:#fff5f5; color:#9b2c2c; border-color:#fed7d7; }
+    .badge.distrust { background:#fff5f0; color:#9c4221; border-color:#feebc8; }
+    .badge.curiosity { background:#f0fff4; color:#276749; border-color:#c6f6d5; }
+    .badge.control { background:#ebf8ff; color:#2b6cb0; border-color:#bee3f8; }
+    .badge.recognition { background:#f7fafc; color:#2d3748; border-color:#e2e8f0; }
+    .badge.fear { background:#fffaf0; color:#975a16; border-color:#fef3c7; }
+    .gauge { height:14px; background:#f1f5f9; border-radius:999px; overflow:hidden; border:1px solid #e2e8f0; }
+    .gauge-fill { height:100%; width:0%; background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e); transition:width .4s ease; }
+    .small { font-size:12px; }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px; background:#f8fafc; padding:2px 6px; border-radius:6px; border:1px solid #e2e8f0; }
+    .explain { cursor:pointer; color:#2b6cb0; text-decoration:underline; }
+    .pill { display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; background:#f8fafc; border:1px solid #e2e8f0; font-size:12px; }
+    .stage { font-weight:700; }
+    .sparkline { width:100%; height:60px; }
+
+    /* Modal */
+    .modal-backdrop { position:fixed; inset:0; background:rgba(15,35,64,0.6); display:none; align-items:center; justify-content:center; z-index:2000; }
+    .modal { width:min(700px, 92vw); background:#fff; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.25); overflow:hidden; }
+    .modal header { padding:16px 20px; border-bottom:1px solid #eef2f6; position:static; }
+    .modal .body { padding:20px; }
+    .choices { display:flex; flex-wrap:wrap; gap:10px; margin:10px 0 0; }
+    .choice { border:1px solid #e2e8f0; border-radius:12px; padding:10px 14px; cursor:pointer; }
+    .choice.active { background:#ebf8ff; border-color:#90cdf4; color:#2b6cb0; }
+    .modal footer { display:flex; justify-content:flex-end; gap:10px; padding:16px 20px; border-top:1px solid #eef2f6; }
+
     @media(max-width:768px){.hero{flex-direction:column; grid-template-columns:1fr;}}
   </style>
 </head>
@@ -40,6 +71,7 @@
     <nav>
       <ul>
         <li><a href="#services">Services</a></li>
+        <li><a href="#eime">EIME Demo</a></li>
         <li><a href="#industries">Industries</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#clients">Clients</a></li>
@@ -62,6 +94,134 @@
     <div style="background:#e0e0e0; height:300px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#aaa;">Hero Visual / Video</div>
   </div>
 </section>
+
+<!-- EIME Demo: Emotionally Intelligent Marketing Engine -->
+<section id="eime" class="container">
+  <h2>Emotionally Intelligent Marketing Engine (EIME™) — Data Listening Demo</h2>
+  <p class="subtle">Prototype of the "Data Listening" layer that translates customer language into emotional signals and a trust score, with transparent explanations.</p>
+  <div class="row" style="margin-top:20px;">
+    <div class="col">
+      <div class="panel">
+        <h3 style="margin-top:0;">Analyze Customer Text</h3>
+        <textarea id="eime-input" rows="8" placeholder="Paste a review, support ticket, or chat message..."></textarea>
+        <div class="row">
+          <div class="col">
+            <button class="btn-primary" id="eime-analyze">Analyze Emotion & Trust</button>
+          </div>
+          <div class="col" style="display:flex; align-items:center; gap:8px; justify-content:flex-end;">
+            <span class="small">Comfort tier:</span>
+            <span id="eime-comfort-pill" class="pill"><span>Unknown</span></span>
+            <button class="btn-secondary" id="eime-onboarding-open" type="button">Adjust Preferences</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="panel">
+        <h3 style="margin-top:0;">Trust Score</h3>
+        <div class="gauge" aria-label="Emotional Trust Index">
+          <div id="eime-gauge" class="gauge-fill"></div>
+        </div>
+        <div class="row" style="align-items:center; margin-top:10px;">
+          <div class="col" style="flex:0 0 auto;">
+            <div style="font-size:40px; font-weight:700;" id="eime-score">--</div>
+          </div>
+          <div class="col">
+            <div class="small subtle">0–40: validate feelings • 40–70: simplify & give control • 70–100: co-create</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;">
+          <span class="stage" id="eime-stage">—</span>
+          <div id="eime-recos" class="small" style="margin-top:6px;"></div>
+          <div style="margin-top:8px;" class="small">
+            <span class="explain" id="eime-explain">Explain my recommendation</span>
+          </div>
+          <div id="eime-explain-box" class="small" style="display:none; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:10px; margin-top:8px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:20px;">
+    <h3 style="margin-top:0;">Detected Emotional Signals</h3>
+    <div id="eime-signals"></div>
+  </div>
+</section>
+
+<!-- Trust Dashboard -->
+<section id="trust-dashboard" class="container">
+  <h2>Trust Dashboard (MVP)</h2>
+  <div class="row">
+    <div class="col">
+      <div class="panel">
+        <div class="small subtle">🩵 Emotional Trust Index (avg)</div>
+        <div style="font-size:36px; font-weight:700;" id="td-eti">--</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="panel">
+        <div class="small subtle">🧩 Transparency Effectiveness</div>
+        <div class="small">Explain clicks / analyses</div>
+        <div style="font-size:28px; font-weight:700;" id="td-transparency">--</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="panel">
+        <div class="small subtle">🔁 AI Acceptance Over Time</div>
+        <canvas id="td-spark" class="sparkline"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Onboarding Modal -->
+<div id="eime-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+  <div class="modal">
+    <header>
+      <strong>Therapist Framework Onboarding</strong>
+    </header>
+    <div class="body">
+      <div id="eime-step-1">
+        <h3 style="margin:0 0 8px 0;">We listen first.</h3>
+        <p class="subtle">To tailor recommendations, how comfortable are you with AI-driven marketing?</p>
+        <div class="choices">
+          <div class="choice" data-tier="Skeptical">Skeptical</div>
+          <div class="choice" data-tier="Confused">Confused</div>
+          <div class="choice" data-tier="Cautious">Cautious</div>
+          <div class="choice" data-tier="Trusting">Trusting</div>
+        </div>
+      </div>
+      <div id="eime-step-2" style="display:none;">
+        <h3 style="margin:0 0 8px 0;">Your transparency & control</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <label>Transparency level
+            <select id="pref-transparency" style="width:100%; padding:10px; border:1px solid #e2e8f0; border-radius:10px;">
+              <option value="high">High (detailed explanations)</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </label>
+          <label>Explain recommendations
+            <select id="pref-explain" style="width:100%; padding:10px; border:1px solid #e2e8f0; border-radius:10px;">
+              <option value="on">On</option>
+              <option value="off">Off</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div id="eime-step-3" style="display:none;">
+        <h3 style="margin:0 0 8px 0;">You're in control</h3>
+        <p class="subtle">We personalize tone and transparency based on your comfort. You can change this anytime.</p>
+        <div id="eime-summary" class="small" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:10px;"></div>
+      </div>
+    </div>
+    <footer>
+      <button class="btn-secondary" id="eime-skip" type="button">Skip</button>
+      <button class="btn-primary" id="eime-next" type="button">Next</button>
+    </footer>
+  </div>
+  
+</div>
 
 <section id="services" class="container">
   <h2>Our Core Services</h2>
@@ -175,6 +335,251 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     status.style.color = 'red';
   });
 });
+
+// EIME Prototype Logic
+(function(){
+  const inputEl = document.getElementById('eime-input');
+  const analyzeBtn = document.getElementById('eime-analyze');
+  const gaugeEl = document.getElementById('eime-gauge');
+  const scoreEl = document.getElementById('eime-score');
+  const stageEl = document.getElementById('eime-stage');
+  const recosEl = document.getElementById('eime-recos');
+  const signalsEl = document.getElementById('eime-signals');
+  const explainBtn = document.getElementById('eime-explain');
+  const explainBox = document.getElementById('eime-explain-box');
+  const comfortPill = document.getElementById('eime-comfort-pill');
+  const transparencyEl = document.getElementById('td-transparency');
+  const etiEl = document.getElementById('td-eti');
+  const sparkEl = document.getElementById('td-spark');
+  const onboardingOpen = document.getElementById('eime-onboarding-open');
+
+  // Persistence helpers
+  const store = {
+    get(key, fallback){ try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; } },
+    set(key, value){ localStorage.setItem(key, JSON.stringify(value)); }
+  };
+
+  // Lexicons (minimal, illustrative)
+  const LEX = {
+    positive:["great","helpful","clear","transparent","safe","easy","love","trust","confident","support"],
+    negative:["bad","worried","confused","hard","hate","unsafe","creepy","spam","annoying","scam"],
+    anxiety:["worried","anxious","nervous","overwhelmed","confused","hesitant","uncertain","stress","pressure"],
+    distrust:["scam","opaque","creepy","unethical","privacy","steal","lie","bias","mistrust","tracking"],
+    curiosity:["curious","wonder","how","learn","interested","explore","try","test","what if","understand"],
+    control:["control","options","opt out","choose","customize","settings","turn off","limit","consent"],
+    recognition:["recognize","understand me","personal","remember","seen","heard","appreciate"],
+    fear:["lose","loss","cost","waste","risk","fail","failure","mistake"]
+  };
+
+  function scoreSentiment(text){
+    const t = text.toLowerCase();
+    let pos = 0, neg = 0;
+    for(const w of LEX.positive){ if(t.includes(w)) pos += 1; }
+    for(const w of LEX.negative){ if(t.includes(w)) neg += 1; }
+    const total = pos + neg;
+    if(total === 0) return 0; // neutral
+    return (pos - neg) / Math.max(5, total); // scale softly
+  }
+
+  function detectSignals(text){
+    const t = text.toLowerCase();
+    const signals = {};
+    for(const [k, arr] of Object.entries(LEX)){
+      if(["positive","negative"].includes(k)) continue;
+      let s = 0;
+      for(const w of arr){ if(t.includes(w)) s += 1; }
+      signals[k] = s;
+    }
+    return signals;
+  }
+
+  function computeTrustScore(sentiment, signals, comfortTier){
+    // Baseline
+    let score = 55;
+    // Sentiment effect
+    score += sentiment * 25; // ~ +/- 25
+    // Emotional signals
+    score -= Math.min(20, (signals.anxiety||0) * 4);
+    score -= Math.min(20, (signals.distrust||0) * 5);
+    score -= Math.min(12, (signals.fear||0) * 3);
+    score += Math.min(12, (signals.curiosity||0) * 3);
+    score += Math.min(10, (signals.control||0) * 2.5);
+    score += Math.min(8, (signals.recognition||0) * 2);
+    // Comfort tier calibration
+    const tierBoost = { Skeptical:-8, Confused:-4, Cautious:-2, Trusting:+4 }[comfortTier] || 0;
+    score += tierBoost;
+    // Clamp
+    return Math.max(0, Math.min(100, Math.round(score)));
+  }
+
+  function mapToStage(score){
+    if(score < 40) return { level:1, name:"Awareness", userEmotion:"Skeptical", marketer:"Validate feelings about AI", ai:"Sentiment analysis", outcome:"Curiosity" };
+    if(score < 60) return { level:2, name:"Engagement", userEmotion:"Confused", marketer:"Explain simply & transparently", ai:"Natural-language explainability", outcome:"Comfort" };
+    if(score < 80) return { level:3, name:"Empowerment", userEmotion:"Cautious", marketer:"Provide control & customization", ai:"Adaptive UX + opt-outs", outcome:"Confidence" };
+    return { level:4, name:"Relationship", userEmotion:"Trusting", marketer:"Collaborate with the user", ai:"Co-creation & predictive empathy", outcome:"Loyalty" };
+  }
+
+  function explain(sentiment, signals, score){
+    const parts = [];
+    if(sentiment > 0.15) parts.push("Positive language increased trust.");
+    if(sentiment < -0.15) parts.push("Negative language decreased trust.");
+    const top = Object.entries(signals).sort((a,b)=>b[1]-a[1]).filter(([,v])=>v>0).slice(0,3);
+    for(const [k,v] of top){
+      const label = k.charAt(0).toUpperCase() + k.slice(1);
+      if(["anxiety","distrust","fear"].includes(k)) parts.push(`${label} signals detected (${v}) lowered trust.`);
+      else parts.push(`${label} signals detected (${v}) raised trust.`);
+    }
+    parts.push(`Final Emotional Trust Index: ${score}.`);
+    return parts;
+  }
+
+  function renderSignals(signals){
+    const order = ["anxiety","distrust","fear","curiosity","control","recognition"];
+    signalsEl.innerHTML = '';
+    for(const k of order){
+      const v = signals[k]||0;
+      const span = document.createElement('span');
+      span.className = `badge ${k}`;
+      span.textContent = `${k.charAt(0).toUpperCase()+k.slice(1)}: ${v}`;
+      signalsEl.appendChild(span);
+    }
+  }
+
+  function persistSession(score, signals, sentiment){
+    const sessions = store.get('eime_sessions', []);
+    const topSignal = Object.entries(signals).sort((a,b)=>b[1]-a[1])[0]?.[0] || null;
+    sessions.push({ t: Date.now(), score, topSignal, sentiment });
+    store.set('eime_sessions', sessions.slice(-120)); // keep last 120
+  }
+
+  function renderDashboard(){
+    const sessions = store.get('eime_sessions', []);
+    if(sessions.length){
+      const avg = Math.round(sessions.reduce((a,b)=>a+b.score,0)/sessions.length);
+      etiEl.textContent = avg;
+    } else {
+      etiEl.textContent = '--';
+    }
+    const stats = store.get('eime_stats', { analyses:0, explainClicks:0 });
+    transparencyEl.textContent = stats.analyses ? `${Math.round((stats.explainClicks/stats.analyses)*100)}%` : '--';
+
+    // Sparkline
+    const ctx = sparkEl.getContext('2d');
+    ctx.clearRect(0,0,sparkEl.width, sparkEl.height);
+    const w = sparkEl.width = sparkEl.clientWidth; // ensure dpi fit
+    const h = sparkEl.height = sparkEl.clientHeight;
+    if(sessions.length < 2) return;
+    const values = sessions.slice(-40).map(s=>s.score);
+    const min = Math.min(...values, 0);
+    const max = Math.max(...values, 100);
+    const pad = 6;
+    ctx.strokeStyle = '#2b6cb0';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    values.forEach((v,i)=>{
+      const x = pad + (i/(values.length-1))*(w-2*pad);
+      const y = h - pad - ((v-min)/(max-min||1))*(h-2*pad);
+      if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    });
+    ctx.stroke();
+  }
+
+  function getComfort(){
+    const prefs = store.get('eime_prefs', null);
+    return prefs?.comfortTier || 'Unknown';
+  }
+  function setComfortPill(){
+    const tier = getComfort();
+    comfortPill.firstElementChild.textContent = tier;
+  }
+
+  analyzeBtn?.addEventListener('click', ()=>{
+    const text = (inputEl?.value || '').trim();
+    if(!text){ alert('Please paste some text.'); return; }
+    const stats = store.get('eime_stats', { analyses:0, explainClicks:0 });
+    stats.analyses += 1; store.set('eime_stats', stats);
+
+    const sentiment = scoreSentiment(text);
+    const signals = detectSignals(text);
+    const comfort = getComfort();
+    const score = computeTrustScore(sentiment, signals, comfort);
+    const stage = mapToStage(score);
+    const parts = explain(sentiment, signals, score);
+
+    // UI updates
+    gaugeEl.style.width = `${score}%`;
+    scoreEl.textContent = String(score);
+    stageEl.textContent = `${stage.level}️⃣ ${stage.name} — ${stage.userEmotion}`;
+    recosEl.innerHTML = `<div><strong>Marketer:</strong> ${stage.marketer}</div><div><strong>AI:</strong> ${stage.ai}</div><div><strong>Outcome:</strong> ${stage.outcome}</div>`;
+    renderSignals(signals);
+    explainBox.style.display = 'none'; explainBox.innerHTML = parts.map(p=>`• ${p}`).join('<br>');
+
+    // Persist and refresh dashboard
+    persistSession(score, signals, sentiment);
+    renderDashboard();
+  });
+
+  explainBtn?.addEventListener('click', ()=>{
+    const stats = store.get('eime_stats', { analyses:0, explainClicks:0 });
+    stats.explainClicks += 1; store.set('eime_stats', stats);
+    explainBox.style.display = explainBox.style.display === 'none' ? 'block' : 'none';
+    renderDashboard();
+  });
+
+  // Onboarding modal
+  const modal = document.getElementById('eime-modal');
+  const nextBtn = document.getElementById('eime-next');
+  const skipBtn = document.getElementById('eime-skip');
+  const step1 = document.getElementById('eime-step-1');
+  const step2 = document.getElementById('eime-step-2');
+  const step3 = document.getElementById('eime-step-3');
+  const summary = document.getElementById('eime-summary');
+  const transparencySel = document.getElementById('pref-transparency');
+  const explainSel = document.getElementById('pref-explain');
+  let chosenTier = null; let step = 1;
+
+  function openModal(){ modal.style.display = 'flex'; step = 1; renderStep(); }
+  function closeModal(){ modal.style.display = 'none'; }
+  function renderStep(){
+    step1.style.display = step===1 ? 'block' : 'none';
+    step2.style.display = step===2 ? 'block' : 'none';
+    step3.style.display = step===3 ? 'block' : 'none';
+    nextBtn.textContent = step===3 ? 'Finish' : 'Next';
+    if(step===3){
+      summary.innerHTML = `Comfort: <span class="kbd">${chosenTier||'—'}</span> · Transparency: <span class="kbd">${transparencySel.value}</span> · Explain: <span class="kbd">${explainSel.value}</span>`;
+    }
+  }
+
+  // Choices selection
+  document.querySelectorAll('#eime-step-1 .choice').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      document.querySelectorAll('#eime-step-1 .choice').forEach(c=>c.classList.remove('active'));
+      el.classList.add('active');
+      chosenTier = el.getAttribute('data-tier');
+    });
+  });
+
+  nextBtn.addEventListener('click', ()=>{
+    if(step===1 && !chosenTier){ alert('Please choose a comfort tier.'); return; }
+    if(step<3){ step += 1; renderStep(); return; }
+    const prefs = { comfortTier: chosenTier, transparency: transparencySel.value, explain: explainSel.value };
+    store.set('eime_prefs', prefs);
+    store.set('eime_onboarded', true);
+    setComfortPill();
+    closeModal();
+  });
+  skipBtn.addEventListener('click', ()=>{ store.set('eime_onboarded', true); closeModal(); });
+  onboardingOpen?.addEventListener('click', openModal);
+
+  // Initialize
+  if(!store.get('eime_onboarded', false)){
+    // open after a short delay for better UX
+    setTimeout(openModal, 600);
+  }
+  setComfortPill();
+  renderDashboard();
+  window.addEventListener('resize', renderDashboard);
+})();
 </script>
 
 </body>
