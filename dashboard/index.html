@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EIME Trust Dashboard (MVP)</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">🧠</span>
+      <div>
+        <div class="brand-title">EIME™ Trust Dashboard</div>
+        <div class="brand-subtitle">Emotional Intelligence Beats Algorithms</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="/onboarding/" title="Therapist Framework Onboarding">Onboarding</a>
+      <a href="/deck/" title="Brand Story Deck">Deck</a>
+      <a href="/" title="Home">Home</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="cards">
+      <div class="card">
+        <div class="label">🩵 Emotional Trust Index</div>
+        <div id="metric-trust" class="value">—</div>
+      </div>
+      <div class="card">
+        <div class="label">🧩 Transparency Effectiveness</div>
+        <div id="metric-transparency" class="value">—</div>
+      </div>
+      <div class="card">
+        <div class="label">🔁 AI Acceptance Over Time</div>
+        <div id="metric-acceptance" class="value">—</div>
+      </div>
+      <div class="card">
+        <div class="label">💙 Emotional Loyalty Score</div>
+        <div id="metric-els" class="value">—</div>
+      </div>
+    </section>
+
+    <section class="charts">
+      <div class="chart-card">
+        <div class="chart-title">Trust Velocity Trend</div>
+        <canvas id="chartTrust"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Emotion Mix (Latest Batch)</div>
+        <canvas id="chartEmotions"></canvas>
+      </div>
+    </section>
+
+    <section class="analyzer">
+      <h2>Analyze Feedback</h2>
+      <p class="muted">Paste a review, chat, or note. The Data Listening layer detects emotions and computes a Trust Score. Toggle explainability to model transparency.</p>
+      <div class="analyzer-row">
+        <textarea id="inputText" rows="6" placeholder="Paste user feedback here..."></textarea>
+        <div class="analyzer-controls">
+          <label class="switch">
+            <input id="toggleExplain" type="checkbox" />
+            <span>Explain My Recommendation</span>
+          </label>
+          <button id="btnAnalyze">Analyze</button>
+        </div>
+      </div>
+      <div id="analysisOutput" class="output hidden"></div>
+    </section>
+
+    <section class="coach">
+      <h2>AI Copy Coach (Validation Before Solution)</h2>
+      <div id="coachOutput" class="output hidden"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2025 EIME™ — The AI That Listens</span>
+  </footer>
+
+  <script src="./analyzer.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

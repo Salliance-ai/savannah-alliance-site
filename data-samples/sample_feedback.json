@@ -1,0 +1,32 @@
+[
+  {
+    "id": "u1",
+    "timestamp": 1730131200000,
+    "channel": "review",
+    "text": "I am curious to try the AI but I don't understand how it works. Please explain simply and give me control over what it does."
+  },
+  {
+    "id": "u2",
+    "timestamp": 1730217600000,
+    "channel": "chat",
+    "text": "This feels like a black box and I am worried about privacy. I'm hesitant to enable anything until I know how my data is used."
+  },
+  {
+    "id": "u3",
+    "timestamp": 1730304000000,
+    "channel": "nps",
+    "text": "Great idea. Transparent, honest, and easy to understand so far. I enjoy the helpful suggestions."
+  },
+  {
+    "id": "u4",
+    "timestamp": 1730390400000,
+    "channel": "support",
+    "text": "Confusing onboarding. I don't understand the settings and feel overwhelmed."
+  },
+  {
+    "id": "u5",
+    "timestamp": 1730476800000,
+    "channel": "review",
+    "text": "I like the option to opt out of automated emails. Feels safe and reliable."
+  }
+]

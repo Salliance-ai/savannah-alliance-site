@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Therapist Framework Onboarding</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">🧠</span>
+      <div>
+        <div class="brand-title">EIME™ Onboarding</div>
+        <div class="brand-subtitle">Empathy as UX</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="/dashboard/">Dashboard</a>
+      <a href="/deck/">Deck</a>
+      <a href="/">Home</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="wizard">
+      <div class="steps">
+        <div class="step active">1. Listen</div>
+        <div class="step">2. Validate</div>
+        <div class="step">3. Empower</div>
+        <div class="step">4. Review</div>
+      </div>
+
+      <div id="panel-1" class="panel">
+        <h2>How do you feel about AI in marketing?</h2>
+        <p class="muted">Choose any that resonate. This helps us tune comfort and transparency.</p>
+        <div class="options">
+          <label><input type="checkbox" value="anxious"/> Anxious</label>
+          <label><input type="checkbox" value="skeptical"/> Skeptical</label>
+          <label><input type="checkbox" value="confused"/> Confused</label>
+          <label><input type="checkbox" value="curious"/> Curious</label>
+          <label><input type="checkbox" value="cautious"/> Cautious</label>
+          <label><input type="checkbox" value="optimistic"/> Optimistic</label>
+        </div>
+        <div class="actions">
+          <button id="to-2">Continue</button>
+        </div>
+      </div>
+
+      <div id="panel-2" class="panel hidden">
+        <h2>We hear you. Let us be transparent.</h2>
+        <p class="muted">Pick the transparency you want. You can change anytime.</p>
+        <label class="line"><input type="checkbox" id="explainDefault"/> Always show “Explain My Recommendation”</label>
+        <label class="line"><input type="checkbox" id="dataUsageLog"/> Access to a simple data usage log</label>
+        <label class="line"><input type="checkbox" id="privacyControls"/> One-click privacy controls in the UI</label>
+        <div class="actions">
+          <button id="back-1" class="secondary">Back</button>
+          <button id="to-3">Continue</button>
+        </div>
+      </div>
+
+      <div id="panel-3" class="panel hidden">
+        <h2>Choose your AI comfort level</h2>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="intensity" value="human_first" checked/> Human-first (explain a lot, opt-in AI)</label>
+          <label class="choice"><input type="radio" name="intensity" value="assistive_ai"/> Assistive AI (you decide, explain on demand)</label>
+          <label class="choice"><input type="radio" name="intensity" value="personalized_ai"/> Personalized AI (proactive help, concise explainers)</label>
+        </div>
+        <div class="actions">
+          <button id="back-2" class="secondary">Back</button>
+          <button id="to-4">Continue</button>
+        </div>
+      </div>
+
+      <div id="panel-4" class="panel hidden">
+        <h2>Review your preferences</h2>
+        <div id="summary" class="summary"></div>
+        <div class="actions">
+          <button id="back-3" class="secondary">Back</button>
+          <button id="save">Save Preferences</button>
+        </div>
+      </div>
+
+      <div id="saved" class="panel hidden">
+        <h2>All set 🎉</h2>
+        <p>Your preferences have been saved. You can edit them anytime in settings.</p>
+        <a class="link" href="/dashboard/">Go to Trust Dashboard</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">© 2025 EIME™ — Psychological Safety by Design</footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

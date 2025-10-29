@@ -1,0 +1,15 @@
+{
+  "name": "eime-data-listening-api",
+  "version": "0.1.0",
+  "description": "Emotionally Intelligent Marketing Engine (EIME) - Data Listening Layer prototype with emotion detection and trust scoring",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
