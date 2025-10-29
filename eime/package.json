@@ -1,0 +1,31 @@
+{
+  "name": "eime-platform",
+  "version": "1.0.0",
+  "description": "Emotionally Intelligent Marketing Engine - A Cyber-Psychological SaaS Framework",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "demo": "node demo.js"
+  },
+  "keywords": [
+    "emotional-intelligence",
+    "ai-marketing",
+    "trust-analytics",
+    "sentiment-analysis"
+  ],
+  "author": "EIME Platform",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "compromise": "^14.11.2",
+    "sentiment": "^5.0.2",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

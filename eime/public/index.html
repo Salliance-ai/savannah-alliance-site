@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EIME™ Platform | Emotionally Intelligent Marketing Engine</title>
+  <meta name="description" content="EIME™ helps brands humanize their algorithms — turning data into dialogue and AI into empathy.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="dashboard-header">
+      <div class="header-content">
+        <div class="logo-section">
+          <h1 class="logo">EIME™</h1>
+          <span class="tagline">Emotionally Intelligent Marketing Engine</span>
+        </div>
+        <nav class="header-nav">
+          <a href="#dashboard" class="nav-link active">Dashboard</a>
+          <a href="#trust-analytics" class="nav-link">Trust Analytics</a>
+          <a href="#emotional-profiles" class="nav-link">Emotional Profiles</a>
+          <a href="#empathy-engine" class="nav-link">Empathy Engine</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-main">
+      <!-- Trust Overview Cards -->
+      <section class="dashboard-section" id="dashboard">
+        <div class="section-header">
+          <h2>Trust Overview</h2>
+          <p class="section-subtitle">Emotional Intelligence Beats Algorithms</p>
+        </div>
+        
+        <div class="metrics-grid">
+          <div class="metric-card primary">
+            <div class="metric-icon">🩵</div>
+            <div class="metric-content">
+              <h3>Emotional Trust Index</h3>
+              <div class="metric-value" id="emotional-trust-index">--</div>
+              <div class="metric-label">Psychological Safety Score</div>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon">🧩</div>
+            <div class="metric-content">
+              <h3>Transparency Effectiveness</h3>
+              <div class="metric-value" id="transparency-effectiveness">--</div>
+              <div class="metric-label">User Understanding</div>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon">🔁</div>
+            <div class="metric-content">
+              <h3>AI Acceptance</h3>
+              <div class="metric-value" id="ai-acceptance">--</div>
+              <div class="metric-label">Over Time</div>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon">📊</div>
+            <div class="metric-content">
+              <h3>Emotional Resonance</h3>
+              <div class="metric-value" id="emotional-resonance">--</div>
+              <div class="metric-label">Index (ERI)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Paradox Model Visualization -->
+        <div class="trust-paradox-section">
+          <h3>The Trust Paradox Model</h3>
+          <div class="paradox-levels">
+            <div class="paradox-level" data-level="1">
+              <div class="level-header">
+                <span class="level-number">1️⃣</span>
+                <span class="level-name">Awareness</span>
+              </div>
+              <div class="level-details">
+                <div class="level-emotion">Emotion: <strong>Skeptical</strong></div>
+                <div class="level-action">Action: Validate feelings about AI</div>
+                <div class="level-outcome">Outcome: Curiosity</div>
+              </div>
+              <div class="level-stat" id="level-1-stat">--%</div>
+            </div>
+
+            <div class="paradox-level" data-level="2">
+              <div class="level-header">
+                <span class="level-number">2️⃣</span>
+                <span class="level-name">Engagement</span>
+              </div>
+              <div class="level-details">
+                <div class="level-emotion">Emotion: <strong>Confused</strong></div>
+                <div class="level-action">Action: Explain simply & transparently</div>
+                <div class="level-outcome">Outcome: Comfort</div>
+              </div>
+              <div class="level-stat" id="level-2-stat">--%</div>
+            </div>
+
+            <div class="paradox-level" data-level="3">
+              <div class="level-header">
+                <span class="level-number">3️⃣</span>
+                <span class="level-name">Empowerment</span>
+              </div>
+              <div class="level-details">
+                <div class="level-emotion">Emotion: <strong>Cautious</strong></div>
+                <div class="level-action">Action: Provide control & customization</div>
+                <div class="level-outcome">Outcome: Confidence</div>
+              </div>
+              <div class="level-stat" id="level-3-stat">--%</div>
+            </div>
+
+            <div class="paradox-level" data-level="4">
+              <div class="level-header">
+                <span class="level-number">4️⃣</span>
+                <span class="level-name">Relationship</span>
+              </div>
+              <div class="level-details">
+                <div class="level-emotion">Emotion: <strong>Trusting</strong></div>
+                <div class="level-action">Action: Collaborate with the user</div>
+                <div class="level-outcome">Outcome: Loyalty</div>
+              </div>
+              <div class="level-stat" id="level-4-stat">--%</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust Loop Section -->
+      <section class="dashboard-section" id="trust-loop">
+        <div class="section-header">
+          <h2>The Emotional Trust Loop</h2>
+        </div>
+        <div class="trust-loop-cycle">
+          <div class="loop-step" data-step="listen">
+            <div class="step-icon">👂</div>
+            <h4>Listen</h4>
+            <p>Capture emotion signals</p>
+            <div class="step-status" id="listen-status">Active</div>
+          </div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-step" data-step="validate">
+            <div class="step-icon">✓</div>
+            <h4>Validate</h4>
+            <p>Acknowledge concerns</p>
+            <div class="step-status" id="validate-status">Active</div>
+          </div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-step" data-step="empower">
+            <div class="step-icon">⚡</div>
+            <h4>Empower</h4>
+            <p>Give control</p>
+            <div class="step-status" id="empower-status">Active</div>
+          </div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-step" data-step="educate">
+            <div class="step-icon">📚</div>
+            <h4>Educate</h4>
+            <p>Explain clearly</p>
+            <div class="step-status" id="educate-status">Active</div>
+          </div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-step" data-step="evolve">
+            <div class="step-icon">🔄</div>
+            <h4>Evolve</h4>
+            <p>Train from feedback</p>
+            <div class="step-status" id="evolve-status">Continuous</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Emotion Analysis Tool -->
+      <section class="dashboard-section" id="emotion-analyzer">
+        <div class="section-header">
+          <h2>Emotion Analysis Tool</h2>
+          <p class="section-subtitle">Test the Emotional Data Layer</p>
+        </div>
+        <div class="analyzer-container">
+          <div class="analyzer-input">
+            <textarea 
+              id="emotion-input" 
+              placeholder="Enter text to analyze emotional sentiment and trust signals..."
+              rows="5"
+            ></textarea>
+            <button class="btn-primary" onclick="analyzeEmotion()">Analyze Emotion</button>
+          </div>
+          <div class="analyzer-results" id="emotion-results"></div>
+        </div>
+      </section>
+
+      <!-- User Emotional Profile -->
+      <section class="dashboard-section" id="emotional-profiles">
+        <div class="section-header">
+          <h2>User Emotional Profiles</h2>
+        </div>
+        <div class="profile-input">
+          <input type="text" id="user-id-input" placeholder="Enter User ID" />
+          <button class="btn-primary" onclick="loadUserProfile()">Load Profile</button>
+        </div>
+        <div class="profile-display" id="profile-display"></div>
+      </section>
+
+      <!-- Empathy Engine Recommendations -->
+      <section class="dashboard-section" id="empathy-engine">
+        <div class="section-header">
+          <h2>Empathy Engine Recommendations</h2>
+        </div>
+        <div class="recommendation-input">
+          <input type="text" id="recommend-user-id" placeholder="User ID" />
+          <input type="text" id="recommend-context" placeholder="Context (e.g., onboarding, feature-announcement)" />
+          <button class="btn-primary" onclick="getRecommendation()">Get Recommendation</button>
+        </div>
+        <div class="recommendation-display" id="recommendation-display"></div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+      <div class="footer-content">
+        <p><strong>EIME™ Platform</strong> | The AI That Listens</p>
+        <p>Where others optimize clicks, we optimize comfort.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
