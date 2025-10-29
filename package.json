@@ -1,0 +1,53 @@
+{
+  "name": "eime-platform",
+  "version": "1.0.0",
+  "description": "Emotionally Intelligent Marketing Engine (EIME™) - AI SaaS Platform for Trust-Based Marketing",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/index.js",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-all": "npm install && cd client && npm install",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "dotenv": "^16.3.1",
+    "mongoose": "^8.0.3",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "axios": "^1.6.2",
+    "openai": "^4.20.1",
+    "sentiment": "^5.0.2",
+    "natural": "^6.12.0",
+    "compromise": "^14.10.0",
+    "socket.io": "^4.7.4",
+    "redis": "^4.6.10",
+    "winston": "^3.11.0",
+    "joi": "^17.11.0",
+    "rate-limiter-flexible": "^3.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "concurrently": "^8.2.2",
+    "jest": "^29.7.0",
+    "eslint": "^8.55.0",
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "AI",
+    "SaaS",
+    "emotional-intelligence",
+    "marketing",
+    "trust",
+    "empathy",
+    "cyber-psychology"
+  ],
+  "author": "EIME™ Platform",
+  "license": "MIT"
+}

@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  /* EIME™ Custom Components */
+  
+  .trust-card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-all duration-200;
+  }
+  
+  .trust-card:hover {
+    @apply border-trust-300 shadow-trust-100/50;
+  }
+  
+  .emotion-indicator {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .emotion-joy {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .emotion-trust {
+    @apply bg-trust-100 text-trust-800;
+  }
+  
+  .emotion-fear {
+    @apply bg-red-100 text-red-800;
+  }
+  
+  .emotion-surprise {
+    @apply bg-purple-100 text-purple-800;
+  }
+  
+  .emotion-sadness {
+    @apply bg-gray-100 text-gray-800;
+  }
+  
+  .emotion-anger {
+    @apply bg-red-100 text-red-800;
+  }
+  
+  .emotion-anticipation {
+    @apply bg-blue-100 text-blue-800;
+  }
+  
+  .emotion-disgust {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .trust-score-low {
+    @apply text-red-600 bg-red-50 border-red-200;
+  }
+  
+  .trust-score-medium {
+    @apply text-yellow-600 bg-yellow-50 border-yellow-200;
+  }
+  
+  .trust-score-high {
+    @apply text-trust-600 bg-trust-50 border-trust-200;
+  }
+  
+  .therapeutic-response {
+    @apply bg-gradient-to-r from-empathy-50 to-primary-50 border border-empathy-200 rounded-lg p-4;
+  }
+  
+  .empathy-glow {
+    @apply shadow-lg shadow-empathy-200/50;
+  }
+  
+  .trust-glow {
+    @apply shadow-lg shadow-trust-200/50;
+  }
+  
+  .ai-assistant-bubble {
+    @apply bg-gradient-to-br from-primary-500 to-primary-600 text-white rounded-2xl px-4 py-3 max-w-md;
+  }
+  
+  .user-message-bubble {
+    @apply bg-gray-100 text-gray-900 rounded-2xl px-4 py-3 max-w-md ml-auto;
+  }
+  
+  .metric-card {
+    @apply bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-200;
+  }
+  
+  .metric-value {
+    @apply text-3xl font-bold text-gray-900;
+  }
+  
+  .metric-label {
+    @apply text-sm font-medium text-gray-600 uppercase tracking-wide;
+  }
+  
+  .metric-change-positive {
+    @apply text-trust-600;
+  }
+  
+  .metric-change-negative {
+    @apply text-red-600;
+  }
+  
+  .progress-bar {
+    @apply w-full bg-gray-200 rounded-full h-2 overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-500 ease-out;
+  }
+  
+  .progress-trust {
+    @apply bg-gradient-to-r from-trust-400 to-trust-600;
+  }
+  
+  .progress-emotion {
+    @apply bg-gradient-to-r from-empathy-400 to-empathy-600;
+  }
+  
+  .progress-ai {
+    @apply bg-gradient-to-r from-primary-400 to-primary-600;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 hover:bg-gray-200 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+  
+  .btn-trust {
+    @apply bg-trust-600 hover:bg-trust-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-trust-500 focus:ring-offset-2;
+  }
+  
+  .btn-empathy {
+    @apply bg-empathy-600 hover:bg-empathy-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-empathy-500 focus:ring-offset-2;
+  }
+  
+  .input-field {
+    @apply block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm;
+  }
+  
+  .textarea-field {
+    @apply block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm resize-none;
+  }
+  
+  .sidebar-link {
+    @apply flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200;
+  }
+  
+  .sidebar-link-active {
+    @apply bg-primary-100 text-primary-700 border-r-2 border-primary-500;
+  }
+  
+  .sidebar-link-inactive {
+    @apply text-gray-600 hover:bg-gray-100 hover:text-gray-900;
+  }
+  
+  .chart-container {
+    @apply bg-white rounded-xl p-6 shadow-sm border border-gray-200;
+  }
+  
+  .tooltip {
+    @apply absolute z-10 px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip-arrow;
+  }
+  
+  .loading-spinner {
+    @apply animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600;
+  }
+  
+  .notification-dot {
+    @apply absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full animate-pulse;
+  }
+  
+  .trust-level-indicator {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .trust-level-awareness {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .trust-level-engagement {
+    @apply bg-blue-100 text-blue-800;
+  }
+  
+  .trust-level-empowerment {
+    @apply bg-purple-100 text-purple-800;
+  }
+  
+  .trust-level-relationship {
+    @apply bg-trust-100 text-trust-800;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-empathy-600 bg-clip-text text-transparent;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl shadow-lg;
+  }
+  
+  .hover-lift {
+    @apply hover:-translate-y-1 hover:shadow-lg transition-all duration-200;
+  }
+  
+  .pulse-ring {
+    @apply absolute inset-0 rounded-full animate-ping opacity-75;
+  }
+  
+  .floating-action {
+    @apply fixed bottom-6 right-6 bg-primary-600 hover:bg-primary-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 z-50;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .animate-trust-glow {
+    animation: trustGlow 3s ease-in-out infinite alternate;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Focus styles for accessibility */
+.focus-visible:focus {
+  @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-break {
+    page-break-before: always;
+  }
+}
+
+/* Dark mode support (future enhancement) */
+@media (prefers-color-scheme: dark) {
+  .dark-mode {
+    @apply bg-gray-900 text-white;
+  }
+}
