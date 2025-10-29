@@ -1,0 +1,39 @@
+{
+  "name": "botlace-ai-platform",
+  "version": "1.0.0",
+  "description": "AI SaaS Operating System for Healthcare",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "keywords": [
+    "healthcare",
+    "ai",
+    "saas",
+    "fhir",
+    "ehr",
+    "clinical",
+    "crm"
+  ],
+  "author": "Botlace Team",
+  "license": "PROPRIETARY",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0"
+  },
+  "dependencies": {}
+}
